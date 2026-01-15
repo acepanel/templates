@@ -26,7 +26,7 @@ environments:
       zh_CN: Windows 版本
       zh_TW: Windows 版本
     type: text
-    default: win11
+    default: 11
   WINDOWS_RAM_SIZE:
     description:
       en: RAM Size (GB)
