@@ -1,6 +1,6 @@
 services:
   tomcat:
-    image: bitnamilegacy/tomcat:10.1.43
+    image: bitnamilegacy/tomcat:11.0.10
     restart: always
     environment:
       - TOMCAT_PASSWORD=${TOMCAT_PASSWORD}
