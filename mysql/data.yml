@@ -1,0 +1,29 @@
+name:
+  en: MySQL
+  zh_CN: MySQL
+  zh_TW: MySQL
+tags:
+  - database
+description:
+  en: World's most popular open source relational database
+  zh_CN: 全球最流行的开源关系型数据库
+  zh_TW: 全球最流行的開源關係型數據庫
+website: https://www.mysql.com
+architectures:
+  - amd64
+  - arm64
+environments:
+  MYSQL_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 3306
+  MYSQL_DB_ROOT_PASSWORD:
+    description:
+      en: Root Password
+      zh_CN: Root 密码
+      zh_TW: Root 密碼
+    type: password
+    default: ""

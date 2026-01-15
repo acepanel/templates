@@ -1,0 +1,14 @@
+services:
+  gatus:
+    image: twinproduction/gatus:v5.34.0
+    ports:
+      - ${GATUS_PORT_HTTP}:8080
+    volumes:
+      - ./config:/config
+      - ./data:/data/
+    networks:
+      - acepanel-network
+
+networks:
+  acepanel-network:
+    external: true

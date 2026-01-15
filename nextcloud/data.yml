@@ -1,0 +1,30 @@
+name:
+  en: Nextcloud
+  zh_CN: Nextcloud
+  zh_TW: Nextcloud
+tags:
+  - storage
+  - tool
+description:
+  en: Self-hosted productivity platform for file sync and collaboration
+  zh_CN: 自托管的文件同步与协作生产力平台
+  zh_TW: 自託管的文件同步與協作生產力平台
+website: https://nextcloud.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  NEXTCLOUD_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 443
+  NEXTCLOUD_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

@@ -1,0 +1,16 @@
+services:
+  watchtower:
+    restart: always
+    networks:
+      - acepanel-network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - TZ=${WATCHTOWER_TZ}
+      - DOCKER_API_VERSION=1.52
+      - ${WATCHTOWER_ENV}
+    command: ${WATCHTOWER_COMMAND}
+    image: containrrr/watchtower:1.7.1
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,23 @@
+name:
+  en: Uptime Kuma
+  zh_CN: Uptime Kuma
+  zh_TW: Uptime Kuma
+tags:
+  - tool
+  - devops
+description:
+  en: Self-hosted monitoring tool with beautiful UI
+  zh_CN: 精美的自托管监控工具
+  zh_TW: 精美的自託管監控工具
+website: https://uptime.kuma.pet/
+architectures:
+  - amd64
+  - arm64
+environments:
+  UPTIME_KUMA_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
+    type: port
+    default: 3001

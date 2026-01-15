@@ -1,0 +1,27 @@
+services:
+  dwz-server:
+    image: docker.cnb.cool/mliev/open/dwz-server:v2.10.2
+    restart: always
+    networks:
+      - acepanel-network
+    ports:
+      - ${MLIEV_DWZ_PORT_HTTP}:8080
+    volumes:
+      - "./config/:/app/config/"
+    environment:
+      - TZ=${MLIEV_DWZ_TIME_ZONE}
+      - DATABASE_DRIVER=${MLIEV_DWZ_DB_TYPE}
+      - DATABASE_HOST=${MLIEV_DWZ_DB_HOST}
+      - DATABASE_PORT=${MLIEV_DWZ_DB_PORT}
+      - DATABASE_DBNAME=${MLIEV_DWZ_DB_NAME}
+      - DATABASE_USERNAME=${MLIEV_DWZ_DB_USER}
+      - DATABASE_PASSWORD=${MLIEV_DWZ_DB_USER_PASSWORD}
+      - REDIS_HOST=${MLIEV_DWZ_REDIS_HOST}
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${MLIEV_DWZ_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=0
+      - GIN_MODE=release
+
+networks:
+  acepanel-network:
+    external: true

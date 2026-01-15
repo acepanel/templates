@@ -1,0 +1,25 @@
+name:
+  en: Home Assistant
+  zh_CN: Home Assistant
+  zh_TW: Home Assistant
+tags:
+  - ai
+  - tool
+description:
+  en: Open source home automation platform focused on privacy and local control
+  zh_CN: 注重隐私和本地控制的开源智能家居平台
+  zh_TW: 注重隱私和本機控制的開源智能家居平台
+website: https://www.home-assistant.io/
+architectures:
+  - arm64
+  - amd64
+  - arm/v6
+  - arm/v7
+environments:
+  HOME_ASSISTANT_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

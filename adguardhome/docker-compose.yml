@@ -1,0 +1,27 @@
+services:
+  adguardhome:
+    restart: always
+    networks:
+      - acepanel-network
+    image: adguard/adguardhome:v0.107.71
+    ports:
+      - ${ADGUARDHOME_PORT_DNS}:53/tcp
+      - ${ADGUARDHOME_PORT_DNS}:53/udp
+      - ${ADGUARDHOME_PORT_DHCP_1}:67/udp
+      - ${ADGUARDHOME_PORT_DHCP_2}:68/udp
+      - ${ADGUARDHOME_PORT_HTTP_1}:80/tcp
+      - ${ADGUARDHOME_PORT_DOH}:443/tcp
+      - ${ADGUARDHOME_PORT_DOH}:443/udp
+      - ${ADGUARDHOME_PORT_HTTP}:3000/tcp
+      - ${ADGUARDHOME_PORT_DOT}:853/tcp
+      - ${ADGUARDHOME_PORT_QUIC_1}:784/udp
+      - ${ADGUARDHOME_PORT_DOT}:853/udp
+      - ${ADGUARDHOME_PORT_QUIC_2}:8853/udp
+      - ${ADGUARDHOME_PORT_DNS_CRYPT}:5443/tcp
+      - ${ADGUARDHOME_PORT_DNS_CRYPT}:5443/udp
+    volumes:
+      - ./data/work:/opt/adguardhome/work
+      - ./data/conf:/opt/adguardhome/conf
+networks:
+  acepanel-network:
+    external: true

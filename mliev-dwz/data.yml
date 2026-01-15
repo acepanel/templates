@@ -1,0 +1,90 @@
+name:
+  en: Mliev DWZ
+  zh_CN: Mliev DWZ
+  zh_TW: Mliev DWZ
+tags:
+  - tool
+description:
+  en: Enterprise-level URL shortener service platform
+  zh_CN: 企业级短链接服务平台
+  zh_TW: 企業級短鏈接服務平台
+website: https://www.mliev.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  MLIEV_DWZ_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8080
+  MLIEV_DWZ_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"
+  MLIEV_DWZ_DB_TYPE:
+    description:
+      en: Database Type
+      zh_CN: 数据库类型
+      zh_TW: 資料庫類型
+    type: apps
+    default: mysql
+    options:
+      - label: MySQL
+        value: mysql
+      - label: PostgreSQL
+        value: postgres
+  MLIEV_DWZ_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库主机
+      zh_TW: 資料庫主機
+    type: text
+    default: ""
+  MLIEV_DWZ_DB_PORT:
+    description:
+      en: Database Port
+      zh_CN: 数据库端口
+      zh_TW: 資料庫端口
+    type: port
+    default: 3306
+  MLIEV_DWZ_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名
+      zh_TW: 資料庫名
+    type: text
+    default: dwz
+  MLIEV_DWZ_DB_USER:
+    description:
+      en: Database User
+      zh_CN: 数据库用户
+      zh_TW: 資料庫用戶
+    type: text
+    default: dwz
+  MLIEV_DWZ_DB_USER_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: ""
+  MLIEV_DWZ_REDIS_HOST:
+    description:
+      en: Redis Host
+      zh_CN: Redis 主机
+      zh_TW: Redis 主機
+    type: text
+    default: ""
+  MLIEV_DWZ_REDIS_ROOT_PASSWORD:
+    description:
+      en: Redis Password
+      zh_CN: Redis 密码
+      zh_TW: Redis 密碼
+    type: password
+    default: ""

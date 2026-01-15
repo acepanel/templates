@@ -1,0 +1,22 @@
+name:
+  en: Qinglong
+  zh_CN: 青龙
+  zh_TW: 青龍
+tags:
+  - tool
+description:
+  en: Scheduled task management platform
+  zh_CN: 定时任务管理平台
+  zh_TW: 定時任務管理平台
+website: https://qinglong.online
+architectures:
+  - amd64
+  - arm64
+environments:
+  QINGLONG_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
+    type: port
+    default: 5700

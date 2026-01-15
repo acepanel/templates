@@ -1,0 +1,13 @@
+services:
+  qinglong:
+    image: whyour/qinglong:2.20.1-debian
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data:/ql/data
+    ports:
+      - "${QINGLONG_PORT_HTTP}:5700"
+    restart: always
+networks:
+  acepanel-network:
+    external: true

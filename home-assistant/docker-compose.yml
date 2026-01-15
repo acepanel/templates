@@ -1,0 +1,13 @@
+services:
+  homeassistant:
+    restart: always
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - "./data:/config"
+      - "/run/dbus:/run/dbus:ro"
+    environment:
+      - TZ=${HOME_ASSISTANT_TIME_ZONE}
+    image: homeassistant/home-assistant:2026.1.1

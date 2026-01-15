@@ -1,0 +1,62 @@
+services:
+  namesrv:
+    image: apache/rocketmq:5.4.0
+    ports:
+      - ${ROCKETMQ_PORT_NAMESERVER}:9876
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data/namesrv/logs:/home/rocketmq/logs
+    command: sh mqnamesrv
+  broker:
+    image: apache/rocketmq:5.4.0
+    links:
+      - namesrv
+    ports:
+      - ${ROCKETMQ_PORT_FASTLISTEN}:10909
+      - ${ROCKETMQ_PORT_LISTEN}:10911
+      - ${ROCKETMQ_PORT_HALISTEN}:10912
+    networks:
+      - acepanel-network
+    environment:
+      - NAMESRV_ADDR=namesrv:9876
+    volumes:
+      - ./data/broker/logs:/home/rocketmq/logs
+      - ./data/broker/store:/home/rocketmq/store
+      - ./data/broker/conf/broker.conf:/opt/rocketmq-5.2.0/conf/broker.conf
+    command: sh mqbroker -c /opt/rocketmq-5.2.0/conf/broker.conf
+  proxy:
+    image: apache/rocketmq:5.4.0
+    links:
+      - namesrv
+      - broker
+    depends_on:
+      - broker
+    ports:
+      - ${ROCKETMQ_PORT_REMOTINGLISTEN}:8080
+      - ${ROCKETMQ_PORT_GRPCSERVER}:8081
+    networks:
+      - acepanel-network
+    restart: on-failure
+    environment:
+      - NAMESRV_ADDR=namesrv:9876
+    volumes:
+      - ./data/proxy/logs:/home/rocketmq/logs
+      - ./data/proxy/conf/rmq-proxy.json:/opt/rocketmq-5.2.0/conf/rmq-proxy.json
+    command: sh mqproxy -pc /opt/rocketmq-5.2.0/conf/rmq-proxy.json
+  dashboard:
+    image: apacherocketmq/rocketmq-dashboard:latest
+    links:
+      - namesrv
+    depends_on:
+      - namesrv
+    ports:
+      - ${ROCKETMQ_PORT_HTTP}:8082
+    networks:
+      - acepanel-network
+    restart: on-failure
+    environment:
+      - JAVA_OPTS=-Drocketmq.namesrv.addr=namesrv:9876
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,78 @@
+name:
+  en: Windows
+  zh_CN: Windows
+  zh_TW: Windows
+tags:
+  - tool
+description:
+  en: Run Windows in Docker container with KVM acceleration
+  zh_CN: 在 Docker 容器中运行 Windows，支持 KVM 加速
+  zh_TW: 在 Docker 容器中運行 Windows，支持 KVM 加速
+website: https://github.com/dockur/windows
+architectures:
+  - amd64
+  - arm64
+environments:
+  WINDOWS_PORT:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
+    type: port
+    default: 8006
+  WINDOWS_VERSION:
+    description:
+      en: Windows Version
+      zh_CN: Windows 版本
+      zh_TW: Windows 版本
+    type: text
+    default: win11
+  WINDOWS_RAM_SIZE:
+    description:
+      en: RAM Size (GB)
+      zh_CN: 内存大小 (GB)
+      zh_TW: 內存大小 (GB)
+    type: text
+    default: 4G
+  WINDOWS_CPU_CORES:
+    description:
+      en: CPU Cores
+      zh_CN: CPU 核心数
+      zh_TW: CPU 核心數
+    type: number
+    default: 2
+  WINDOWS_DISK_SIZE:
+    description:
+      en: Disk Size (GB)
+      zh_CN: 磁盘大小 (GB)
+      zh_TW: 磁盤大小 (GB)
+    type: text
+    default: 64G
+  WINDOWS_USERNAME:
+    description:
+      en: Username
+      zh_CN: 用户名
+      zh_TW: 用戶名
+    type: text
+    default: docker
+  WINDOWS_PASSWORD:
+    description:
+      en: Password
+      zh_CN: 密码
+      zh_TW: 密碼
+    type: password
+    default: ""
+  WINDOWS_LANGUAGE:
+    description:
+      en: Language
+      zh_CN: 语言
+      zh_TW: 語言
+    type: text
+    default: Chinese
+  WINDOWS_KEYBOARD_LAYOUT:
+    description:
+      en: Keyboard Layout
+      zh_CN: 键盘布局
+      zh_TW: 鍵盤佈局
+    type: text
+    default: cn

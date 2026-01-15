@@ -1,0 +1,37 @@
+name:
+  en: Watchtower
+  zh_CN: Watchtower
+  zh_TW: Watchtower
+tags:
+  - tool
+  - devops
+description:
+  en: Automated Docker container image update tool
+  zh_CN: 自动化 Docker 容器镜像更新工具
+  zh_TW: 自動化 Docker 容器鏡像更新工具
+website: https://containrrr.dev/watchtower/
+architectures:
+  - amd64
+  - arm64
+environments:
+  WATCHTOWER_TZ:
+    description:
+      en: Timezone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: Asia/Shanghai
+  WATCHTOWER_ENV:
+    description:
+      en: Additional Environment Variable
+      zh_CN: 附加环境变量
+      zh_TW: 附加環境變量
+    type: text
+    default: ""
+  WATCHTOWER_COMMAND:
+    description:
+      en: Command Arguments
+      zh_CN: 命令参数
+      zh_TW: 命令參數
+    type: text
+    default: ""

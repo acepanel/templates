@@ -1,0 +1,15 @@
+services:
+  certd:
+    image: greper/certd:1.38.0
+    restart: always
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data/certd:/app/data
+    ports:
+      - ${CERTD_PORT_HTTP}:7001
+      - ${CERTD_PORT_HTTPS}:7002
+
+networks:
+  acepanel-network:
+    external: true

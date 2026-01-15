@@ -1,0 +1,22 @@
+name:
+  en: Prometheus
+  zh_CN: Prometheus
+  zh_TW: Prometheus
+tags:
+  - monitor
+description:
+  en: Open source monitoring and alerting toolkit
+  zh_CN: 开源监控和告警工具包
+  zh_TW: 開源監控和告警工具包
+website: https://prometheus.io
+architectures:
+  - amd64
+  - arm64
+environments:
+  PROMETHEUS_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
+    type: port
+    default: 9090

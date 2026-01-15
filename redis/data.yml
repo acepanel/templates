@@ -1,0 +1,30 @@
+name:
+  en: Redis
+  zh_CN: Redis
+  zh_TW: Redis
+tags:
+  - database
+  - middleware
+description:
+  en: In-memory data structure store for database, cache and message broker
+  zh_CN: 内存数据结构存储，用作数据库、缓存和消息代理
+  zh_TW: 內存數據結構存儲，用作數據庫、緩存和消息代理
+website: https://redis.io/
+architectures:
+  - amd64
+  - arm64
+environments:
+  REDIS_REDIS_ROOT_PASSWORD:
+    description:
+      en: Redis Root Password
+      zh_CN: Redis Root 密码
+      zh_TW: Redis Root 密碼
+    type: password
+    default: ""
+  REDIS_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 端口
+    type: port
+    default: 6379

@@ -1,0 +1,22 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:18.7.1-ce.0
+    networks:
+      - acepanel-network
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    ports:
+      - "${GITLAB_PORT_HTTP}:80"
+      - "${GITLAB_PORT_SSH}:22"
+    environment:
+      TZ: ${GITLAB_TIME_ZONE}
+    volumes:
+      - "./data/config:/etc/gitlab"
+      - "./data/logs:/var/log/gitlab"
+      - "./data/data:/var/opt/gitlab"
+    shm_size: ${GITLAB_SHM_SIZE}
+
+networks:
+  acepanel-network:
+    external: true

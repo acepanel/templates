@@ -1,0 +1,28 @@
+name:
+  en: MS SQL Server
+  zh_CN: MS SQL Server
+  zh_TW: MS SQL Server
+tags:
+  - database
+description:
+  en: Microsoft SQL Server relational database
+  zh_CN: 微软 SQL Server 关系型数据库
+  zh_TW: 微軟 SQL Server 關係型數據庫
+website: https://github.com/microsoft/mssql-docker
+architectures:
+  - amd64
+environments:
+  MSSQL_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 1433
+  MSSQL_SA_PASSWORD:
+    description:
+      en: SA Password
+      zh_CN: SA 密码
+      zh_TW: SA 密碼
+    type: password
+    default: ""

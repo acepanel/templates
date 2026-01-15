@@ -1,0 +1,24 @@
+name:
+  en: Grafana
+  zh_CN: Grafana
+  zh_TW: Grafana
+tags:
+  - monitor
+  - tool
+description:
+  en: Open platform for monitoring and observability
+  zh_CN: 开源监控和可观测性平台
+  zh_TW: 開源監控和可觀測性平台
+website: https://grafana.com/
+architectures:
+  - amd64
+  - arm64
+  - arm/v7
+environments:
+  GRAFANA_PORT_HTTP:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 3000

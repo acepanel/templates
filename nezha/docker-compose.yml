@@ -1,0 +1,14 @@
+services:
+  dashboard:
+    image: ghcr.io/nezhahq/nezha:v1.14.14
+    restart: always
+    networks:
+      - acepanel-network
+    ports:
+      - ${NEZHA_PORT_HTTP}:8008
+    volumes:
+      - ./data:/dashboard/data
+
+networks:
+  acepanel-network:
+    external: true

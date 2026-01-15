@@ -1,0 +1,15 @@
+services:
+  umami:
+    image: ghcr.io/umami-software/umami:${UMAMI_DB_TYPE}-v2.20.2
+    restart: always
+    ports:
+      - ${UMAMI_PORT_HTTP}:3000
+    environment:
+      DATABASE_TYPE: ${UMAMI_DB_TYPE}
+      DATABASE_URL: ${UMAMI_DB_TYPE}://${UMAMI_DB_USER}:${UMAMI_DB_USER_PASSWORD}@${UMAMI_DB_HOST}:${UMAMI_DB_PORT}/${UMAMI_DB_NAME}
+      APP_SECRET: ${HASH_SALT}
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true

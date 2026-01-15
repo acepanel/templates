@@ -1,0 +1,30 @@
+services:
+  windows:
+    image: dockurr/windows:5.14
+    environment:
+      VERSION: ${WINDOWS_VERSION}
+      RAM_SIZE: ${WINDOWS_RAM_SIZE}
+      CPU_CORES: ${WINDOWS_CPU_CORES}
+      DISK_SIZE: ${WINDOWS_DISK_SIZE}
+      USERNAME: ${WINDOWS_USERNAME}
+      PASSWORD: ${WINDOWS_PASSWORD}
+      LANGUAGE: ${WINDOWS_LANGUAGE}
+      REGION: ${WINDOWS_KEYBOARD_LAYOUT}
+      KEYBOARD: ${WINDOWS_KEYBOARD_LAYOUT}
+    ports:
+      - ${WINDOWS_PORT}:8006
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./data:/storage
+    restart: always
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true
+
+

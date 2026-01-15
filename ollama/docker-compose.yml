@@ -1,0 +1,14 @@
+services:
+  ollama:
+    image: ollama/ollama:0.14.1
+    restart: unless-stopped
+    ports:
+      - ${OLLAMA_PORT_HTTP}:11434
+    networks:
+      - acepanel-network
+    tty: true
+    volumes:
+      - ./data:/root/.ollama
+networks:
+  acepanel-network:
+    external: true

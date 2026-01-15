@@ -1,0 +1,44 @@
+name:
+  en: OpenList
+  zh_CN: OpenList
+  zh_TW: OpenList
+tags:
+  - storage
+  - tool
+description:
+  en: File listing program with multi-storage support
+  zh_CN: 支持多种存储的文件列表程序
+  zh_TW: 支持多種存儲的文件列表程序
+website: https://docs.oplist.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  OPENLIST_IMAGE:
+    description:
+      en: Docker Image
+      zh_CN: Docker 镜像
+      zh_TW: Docker 鏡像
+    type: text
+    default: "xhofe/openlist:latest"
+  OPENLIST_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 5244
+  OPENLIST_PORT_S3:
+    description:
+      en: S3 Port
+      zh_CN: S3 端口
+      zh_TW: S3 埠
+    type: port
+    default: 5246
+  OPENLIST_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

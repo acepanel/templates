@@ -1,0 +1,16 @@
+services:
+  lobe-chat:
+    image: lobehub/lobe-chat:1.143.2
+    restart: always
+    networks:
+      - acepanel-network
+    ports:
+      - "${LOBE_CHAT_PORT_HTTP}:3210"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_PROXY_URL=${OPENAI_PROXY_URL}
+      - ACCESS_CODE=${ACCESS_CODE}
+      - OPENAI_MODEL_LIST=${OPENAI_MODEL_LIST}
+networks:  
+  acepanel-network:  
+    external: true

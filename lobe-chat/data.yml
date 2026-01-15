@@ -1,0 +1,51 @@
+name:
+  en: LobeChat
+  zh_CN: LobeChat
+  zh_TW: LobeChat
+tags:
+  - ai
+  - tool
+description:
+  en: Modern ChatGPT/LLMs chat application and development framework
+  zh_CN: 现代化的 ChatGPT/LLMs 聊天应用与开发框架
+  zh_TW: 現代化的 ChatGPT/LLMs 聊天應用與開發框架
+website: https://lobehub.com
+architectures:
+  - amd64
+  - arm64
+environments:
+  LOBE_CHAT_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 3210
+  OPENAI_API_KEY:
+    description:
+      en: OpenAI API Key
+      zh_CN: OpenAI API 密钥
+      zh_TW: OpenAI API 密鑰
+    type: text
+    default: ""
+  OPENAI_PROXY_URL:
+    description:
+      en: OpenAI Proxy URL
+      zh_CN: OpenAI 代理地址
+      zh_TW: OpenAI 代理地址
+    type: text
+    default: ""
+  ACCESS_CODE:
+    description:
+      en: Access Code
+      zh_CN: 访问密码
+      zh_TW: 訪問密碼
+    type: password
+    default: ""
+  OPENAI_MODEL_LIST:
+    description:
+      en: OpenAI Model List
+      zh_CN: OpenAI 模型列表
+      zh_TW: OpenAI 模型列表
+    type: text
+    default: ""

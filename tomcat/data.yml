@@ -1,0 +1,29 @@
+name:
+  en: Apache Tomcat
+  zh_CN: Apache Tomcat
+  zh_TW: Apache Tomcat
+tags:
+  - middleware
+description:
+  en: Open source Java Servlet container and web server
+  zh_CN: 开源 Java Servlet 容器和 Web 服务器
+  zh_TW: 開源 Java Servlet 容器和 Web 服務器
+website: https://tomcat.apache.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  TOMCAT_PASSWORD:
+    description:
+      en: Admin Password
+      zh_CN: 管理员密码
+      zh_TW: 管理員密碼
+    type: password
+    default: ""
+  TOMCAT_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
+    type: port
+    default: 8080

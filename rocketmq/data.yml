@@ -1,0 +1,63 @@
+name:
+  en: RocketMQ
+  zh_CN: RocketMQ
+  zh_TW: RocketMQ
+tags:
+  - middleware
+description:
+  en: Cloud-native messaging and streaming platform
+  zh_CN: 云原生消息和流处理平台
+  zh_TW: 雲原生消息和流處理平台
+website: https://rocketmq.apache.org/
+architectures:
+  - amd64
+environments:
+  ROCKETMQ_PORT_NAMESERVER:
+    description:
+      en: NameServer Port
+      zh_CN: NameServer 端口
+      zh_TW: NameServer 端口
+    type: port
+    default: 9876
+  ROCKETMQ_PORT_FASTLISTEN:
+    description:
+      en: Fast Listen Port
+      zh_CN: Fast Listen 端口
+      zh_TW: Fast Listen 端口
+    type: port
+    default: 10909
+  ROCKETMQ_PORT_LISTEN:
+    description:
+      en: Listen Port
+      zh_CN: Listen 端口
+      zh_TW: Listen 端口
+    type: port
+    default: 10911
+  ROCKETMQ_PORT_HALISTEN:
+    description:
+      en: HA Listen Port
+      zh_CN: HA Listen 端口
+      zh_TW: HA Listen 端口
+    type: port
+    default: 10912
+  ROCKETMQ_PORT_REMOTINGLISTEN:
+    description:
+      en: Remoting Listen Port
+      zh_CN: Remoting Listen 端口
+      zh_TW: Remoting Listen 端口
+    type: port
+    default: 8080
+  ROCKETMQ_PORT_GRPCSERVER:
+    description:
+      en: gRPC Server Port
+      zh_CN: gRPC 服务端口
+      zh_TW: gRPC 服務端口
+    type: port
+    default: 8081
+  ROCKETMQ_PORT_HTTP:
+    description:
+      en: HTTP Dashboard Port
+      zh_CN: HTTP 控制台端口
+      zh_TW: HTTP 控制台端口
+    type: port
+    default: 8082

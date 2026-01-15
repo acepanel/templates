@@ -1,0 +1,65 @@
+name:
+  en: One API
+  zh_CN: One API
+  zh_TW: One API
+tags:
+  - ai
+  - tool
+description:
+  en: Unified LLM gateway with OpenAI API compatibility
+  zh_CN: 统一的 LLM 网关，兼容 OpenAI API
+  zh_TW: 統一的 LLM 網關，兼容 OpenAI API
+website: https://openai.justsong.cn/
+architectures:
+  - amd64
+  - arm64
+environments:
+  ONE_API_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 3000
+  ONE_API_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库主机
+      zh_TW: 資料庫主機
+    type: text
+    default: ""
+  ONE_API_DB_PORT:
+    description:
+      en: Database Port
+      zh_CN: 数据库端口
+      zh_TW: 資料庫端口
+    type: port
+    default: 3306
+  ONE_API_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名
+      zh_TW: 資料庫名
+    type: text
+    default: oneapi
+  ONE_API_DB_USER:
+    description:
+      en: Database User
+      zh_CN: 数据库用户
+      zh_TW: 資料庫用戶
+    type: text
+    default: oneapi
+  ONE_API_DB_USER_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: ""
+  ONE_API_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

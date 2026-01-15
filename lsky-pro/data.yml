@@ -1,0 +1,23 @@
+name:
+  en: Lsky Pro
+  zh_CN: Lsky Pro
+  zh_TW: Lsky Pro
+tags:
+  - storage
+  - tool
+description:
+  en: Image hosting platform for uploading and managing images
+  zh_CN: 图片托管平台，用于上传和管理图片
+  zh_TW: 圖片託管平台，用於上傳和管理圖片
+website: https://hub.docker.com/r/halcyonazure/lsky-pro-docker
+architectures:
+  - amd64
+  - arm64
+environments:
+  LSKY_PRO_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8089

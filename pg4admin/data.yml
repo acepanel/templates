@@ -1,0 +1,36 @@
+name:
+  en: pgAdmin 4
+  zh_CN: pgAdmin 4
+  zh_TW: pgAdmin 4
+tags:
+  - tool
+description:
+  en: PostgreSQL management and development platform
+  zh_CN: PostgreSQL 管理与开发平台
+  zh_TW: PostgreSQL 管理與開發平台
+website: https://www.pgadmin.org
+architectures:
+  - amd64
+  - arm64
+environments:
+  PGADMIN_PORT:
+    description:
+      en: The port on which pgAdmin 4 will be accessible.
+      zh_CN: pgAdmin 4 可访问的端口。
+      zh_TW: pgAdmin 4 可訪問的端口。
+    type: port
+    default: 8080
+  PGADMIN_DEFAULT_EMAIL:
+    description:
+      en: The email address for the default pgAdmin 4 administrator account.
+      zh_CN: 默认 pgAdmin 4 管理员账户的电子邮箱地址。
+      zh_TW: 預設 pgAdmin 4 管理員帳戶的電子郵件地址。
+    type: text
+    default:
+  PGADMIN_DEFAULT_PASSWORD:
+    description:
+      en: The password for the default pgAdmin 4 administrator account.
+      zh_CN: 默认 pgAdmin 4 管理员账户的密码。
+      zh_TW: 預設 pgAdmin 4 管理員帳戶的密碼。
+    type: password
+    default:

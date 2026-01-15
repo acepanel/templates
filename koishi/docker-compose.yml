@@ -1,0 +1,16 @@
+services:
+  koishi:
+    image: koishijs/koishi:v1.15.0
+    restart: always
+    environment:
+      - TZ=${KOISHI_TIME_ZONE}
+    networks:
+      - acepanel-network
+    ports:
+      - ${KOISHI_PORT_HTTP}:5140
+    volumes:
+      - ./data:/koishi
+
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,16 @@
+services:
+  lskypro:
+    restart: always
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data:/var/www/html/
+    ports:
+      - "${LSKY_PRO_PORT_HTTP}:8089"
+    environment:
+      - "WEB_PORT=8089"
+    image: halcyonazure/lsky-pro-docker:latest
+
+networks:
+  acepanel-network:
+    external: true

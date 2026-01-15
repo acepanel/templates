@@ -1,0 +1,56 @@
+name:
+  en: RustFS
+  zh_CN: RustFS
+  zh_TW: RustFS
+tags:
+  - middleware
+  - storage
+description:
+  en: High-performance distributed object storage system
+  zh_CN: 高性能分布式对象存储系统
+  zh_TW: 高性能分散式對象存儲系統
+website: https://rustfs.com
+architectures:
+  - amd64
+  - arm64
+environments:
+  RUSTFS_PORT_API:
+    description:
+      en: API Port
+      zh_CN: API 端口
+      zh_TW: API 端口
+    type: port
+    default: 9000
+  RUSTFS_PORT_HTTP:
+    description:
+      en: Web Port
+      zh_CN: Web 端口
+      zh_TW: Web 端口
+    type: port
+    default: 9001
+  RUSTFS_ACCESS_KEY:
+    description:
+      en: Access Key (Username)
+      zh_CN: 访问密钥（用户名）
+      zh_TW: 訪問密鑰（用戶名）
+    type: text
+    default: rustfsadmin
+  RUSTFS_SECRET_KEY:
+    description:
+      en: Secret Key (Password)
+      zh_CN: 密钥（密码）
+      zh_TW: 密鑰（密碼）
+    type: password
+    default: ""
+  RUSTFS_CONSOLE_ENABLE:
+    description:
+      en: Enable Console
+      zh_CN: 启用控制台
+      zh_TW: 啟用控制台
+    type: select
+    default: "true"
+    options:
+      - label: "True"
+        value: "true"
+      - label: "False"
+        value: "false"

@@ -1,0 +1,36 @@
+name:
+  en: PostgreSQL
+  zh_CN: PostgreSQL
+  zh_TW: PostgreSQL
+tags:
+  - database
+description:
+  en: Powerful open source object-relational database system
+  zh_CN: 功能强大的开源对象关系数据库系统
+  zh_TW: 功能強大的開源對象關係數據庫系統
+website: https://www.postgresql.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  POSTGRESQL_DB_ROOT_USER:
+    description:
+      en: Database Root Username
+      zh_CN: 数据库 Root 用户名
+      zh_TW: 數據庫 Root 用戶名
+    type: text
+    default: postgres
+  POSTGRESQL_DB_ROOT_PASSWORD:
+    description:
+      en: Database Root Password
+      zh_CN: 数据库 Root 密码
+      zh_TW: 數據庫 Root 密碼
+    type: password
+    default: ""
+  POSTGRESQL_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 5432

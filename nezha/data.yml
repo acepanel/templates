@@ -1,0 +1,23 @@
+name:
+  en: Nezha
+  zh_CN: 哪吒监控
+  zh_TW: 哪吒監控
+tags:
+  - monitor
+  - tool
+description:
+  en: Lightweight server monitoring and management tool
+  zh_CN: 轻量级服务器监控与运维工具
+  zh_TW: 輕量級服務器監控與運維工具
+website: https://nezha.wiki/
+architectures:
+  - amd64
+  - arm64
+environments:
+  NEZHA_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8008

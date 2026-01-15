@@ -1,0 +1,15 @@
+services:
+  tomcat:
+    image: bitnamilegacy/tomcat:10.1.43
+    restart: always
+    environment:
+      - TOMCAT_PASSWORD=${TOMCAT_PASSWORD}
+    ports:
+      - ${TOMCAT_PORT_HTTP}:8080
+    volumes:
+      - ./data:/bitnami/tomcat
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true

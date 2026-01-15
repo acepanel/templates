@@ -1,0 +1,30 @@
+services:
+  nacos:
+    image: nacos/nacos-server:v3.1.1
+    restart: always
+    environment:
+      - NACOS_AUTH_ENABLE=${NACOS_AUTH_ENABLE:-FALSE}
+      - PREFER_HOST_MODE=hostname
+      - MODE=standalone
+      - JVM_XMS=${NACOS_JVM_XMS}
+      - JVM_XMX=${NACOS_JVM_XMX}
+      - JVM_XMN=${NACOS_JVM_XMN}
+      - JVM_MS=${NACOS_JVM_MS}
+      - JVM_MMS=${NACOS_JVM_MMS}
+      - NACOS_AUTH_IDENTITY_KEY=${NACOS_AUTH_IDENTITY_KEY}
+      - NACOS_AUTH_IDENTITY_VALUE=${NACOS_AUTH_IDENTITY_VALUE}
+      - NACOS_AUTH_TOKEN=${NACOS_AUTH_TOKEN}
+      - NACOS_SERVER_IP=${NACOS_SERVER_IP}
+    volumes:
+      - ./data/logs:/home/nacos/logs
+      - ./data/data:/home/nacos/data
+    ports:
+      - "${NACOS_PORT_HTTP}:8080"
+      - "${NACOS_PORT_API_HTTP}:8848"
+      - "${NACOS_PORT_COMMUNICATION}:9848"
+    networks:
+      - acepanel-network
+
+networks:
+  acepanel-network:
+    external: true

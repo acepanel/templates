@@ -1,0 +1,18 @@
+services:
+  nextcloud:
+    image: linuxserver/nextcloud:32.0.3
+    restart: always
+    networks:
+      - acepanel-network
+    ports:
+      - "${NEXTCLOUD_PORT_HTTPS}:443"
+    volumes:
+      - "./data/config:/config"
+      - "./data/data:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${NEXTCLOUD_TIME_ZONE}
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,29 @@
+name:
+  en: MariaDB
+  zh_CN: MariaDB
+  zh_TW: MariaDB
+tags:
+  - database
+description:
+  en: Open source relational database, MySQL fork
+  zh_CN: 开源关系型数据库，MySQL 分支
+  zh_TW: 開源關係型數據庫，MySQL 分支
+website: https://mariadb.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  MARIADB_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 3306
+  MARIADB_DB_ROOT_PASSWORD:
+    description:
+      en: Root Password
+      zh_CN: Root 密码
+      zh_TW: Root 密碼
+    type: password
+    default: ""

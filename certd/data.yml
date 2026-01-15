@@ -1,0 +1,30 @@
+name:
+  en: Certd
+  zh_CN: Certd
+  zh_TW: Certd
+tags:
+  - tool
+  - devops
+description:
+  en: Open source automated SSL certificate management tool
+  zh_CN: 开源自动化 SSL 证书管理工具
+  zh_TW: 開源自動化 SSL 證書管理工具
+website: https://certd.docmirror.cn/
+architectures:
+  - amd64
+  - arm64
+environments:
+  CERTD_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 7001
+  CERTD_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 7002

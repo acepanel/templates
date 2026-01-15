@@ -1,0 +1,86 @@
+name:
+  en: AdGuard Home
+  zh_CN: AdGuard Home
+  zh_TW: AdGuard Home
+tags:
+  - tool
+  - safe
+description:
+  en: Network-wide ads & trackers blocking DNS server
+  zh_CN: 网络级广告和跟踪器拦截 DNS 服务器
+  zh_TW: 網路級廣告和跟蹤器攔截 DNS 伺服器
+website: https://adguard.com/adguard-home.html
+architectures:
+  - amd64
+  - arm64
+environments:
+  ADGUARDHOME_PORT_HTTP_1:
+    description:
+      en: HTTP Web Port
+      zh_CN: HTTP 网页端口
+      zh_TW: HTTP 網頁埠
+    type: port
+    default: 23000
+  ADGUARDHOME_PORT_HTTP:
+    description:
+      en: Initial Setup Web Port
+      zh_CN: 初始设置网页端口
+      zh_TW: 初始設定網頁埠
+    type: port
+    default: 23001
+  ADGUARDHOME_PORT_DNS:
+    description:
+      en: Standard DNS Port
+      zh_CN: 普通 DNS 端口
+      zh_TW: 普通 DNS 埠
+    type: port
+    default: 20053
+  ADGUARDHOME_PORT_DHCP_1:
+    description:
+      en: DHCP Service Port 1
+      zh_CN: DHCP 服务端口 1
+      zh_TW: DHCP 服務埠 1
+    type: port
+    default: 20067
+  ADGUARDHOME_PORT_DHCP_2:
+    description:
+      en: DHCP Service Port 2
+      zh_CN: DHCP 服务端口 2
+      zh_TW: DHCP 服務埠 2
+    type: port
+    default: 20068
+  ADGUARDHOME_PORT_DOH:
+    description:
+      en: DOH Service Port
+      zh_CN: DOH 服务端口
+      zh_TW: DOH 服務埠
+    type: port
+    default: 20443
+  ADGUARDHOME_PORT_DOT:
+    description:
+      en: DOT Service Port
+      zh_CN: DOT 服务端口
+      zh_TW: DOT 服務埠
+    type: port
+    default: 853
+  ADGUARDHOME_PORT_QUIC_1:
+    description:
+      en: QUIC Service Port 1
+      zh_CN: QUIC 服务端口 1
+      zh_TW: QUIC 服務埠 1
+    type: port
+    default: 20784
+  ADGUARDHOME_PORT_QUIC_2:
+    description:
+      en: QUIC Service Port 2
+      zh_CN: QUIC 服务端口 2
+      zh_TW: QUIC 服務埠 2
+    type: port
+    default: 8853
+  ADGUARDHOME_PORT_DNS_CRYPT:
+    description:
+      en: DNS Crypt Service Port
+      zh_CN: DNS Crypt 服务端口
+      zh_TW: DNS Crypt 服務埠
+    type: port
+    default: 5443

@@ -1,0 +1,19 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4.2.2-management-alpine
+    hostname: rabbitmq
+    restart: always
+    ports:
+        - ${RABBITMQ_PORT_SERVICE}:5672
+        - ${RABBITMQ_PORT_HTTP}:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    volumes:
+        - ./data/:/var/lib/rabbitmq/
+        - ./log/:/var/log/rabbitmq
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true

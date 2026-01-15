@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: redis:8.4.0-alpine
+    restart: always
+    networks:
+      - acepanel-network
+    ports:
+      - ${REDIS_PORT}:6379
+    command: redis-server /etc/redis/redis.conf ${REDIS_REDIS_ROOT_PASSWORD:+--requirepass "${REDIS_REDIS_ROOT_PASSWORD}"}
+    volumes:
+      - ./data:/data
+      - ./conf/redis.conf:/etc/redis/redis.conf
+      - ./logs:/logs
+networks:
+  acepanel-network:
+    external: true

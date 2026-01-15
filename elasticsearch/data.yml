@@ -1,0 +1,49 @@
+name:
+  en: Elasticsearch
+  zh_CN: Elasticsearch
+  zh_TW: Elasticsearch
+tags:
+  - middleware
+  - database
+description:
+  en: Distributed RESTful search and analytics engine
+  zh_CN: 分布式 RESTful 搜索和分析引擎
+  zh_TW: 分佈式 RESTful 搜索和分析引擎
+website: https://www.elastic.co
+architectures:
+  - amd64
+  - arm64
+environments:
+  ELASTICSEARCH_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP端口
+      zh_TW: HTTP連接埠
+    type: port
+    default: 9200
+  ELASTICSEARCH_SECURITY:
+    description:
+      en: Password Verification
+      zh_CN: 开启密码验证
+      zh_TW: 開啟密碼驗證
+    type: select
+    default: "true"
+    options:
+      - label: "True"
+        value: "true"
+      - label: "False"
+        value: "false"
+  ELASTICSEARCH_PASSWORD:
+    description:
+      en: Password
+      zh_CN: 密码
+      zh_TW: 密碼
+    type: password
+    default: "Elastic"
+  ELASTICSEARCH_JAVA_OPTS:
+    description:
+      en: ES JAVA OPTS
+      zh_CN: ES JAVA OPTS
+      zh_TW: ES JAVA OPTS
+    type: text
+    default: "ES_JAVA_OPTS=-Xlog:disable -Xlog:gc=debug:stderr -Xms512m -Xmx512m"

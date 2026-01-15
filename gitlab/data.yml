@@ -1,0 +1,43 @@
+name:
+  en: GitLab
+  zh_CN: GitLab
+  zh_TW: GitLab
+tags:
+  - devops
+description:
+  en: Complete DevOps platform with version control, CI/CD, and project management
+  zh_CN: 完整的 DevOps 平台，包含版本控制、CI/CD 和项目管理
+  zh_TW: 完整的 DevOps 平台，包含版本控制、CI/CD 和項目管理
+website: https://about.gitlab.com
+architectures:
+  - amd64
+  - arm64
+environments:
+  GITLAB_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 連接埠
+    type: port
+    default: 80
+  GITLAB_PORT_SSH:
+    description:
+      en: SSH Port
+      zh_CN: SSH 端口
+      zh_TW: SSH 連接埠
+    type: port
+    default: 22
+  GITLAB_SHM_SIZE:
+    description:
+      en: Shared Memory
+      zh_CN: 共享内存
+      zh_TW: 共享記憶體
+    type: text
+    default: "256m"
+  GITLAB_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

@@ -1,0 +1,23 @@
+name:
+  en: Ollama
+  zh_CN: Ollama
+  zh_TW: Ollama
+tags:
+  - ai
+  - tool
+description:
+  en: Run large language models locally
+  zh_CN: 本地运行大型语言模型
+  zh_TW: 本地運行大型語言模型
+website: https://ollama.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  OLLAMA_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 11434

@@ -1,0 +1,43 @@
+name:
+  en: Act Runner
+  zh_CN: Act Runner
+  zh_TW: Act Runner
+tags:
+  - devops
+description:
+  en: A runner for Gitea based on act
+  zh_CN: 基于 act 的 Gitea 运行器
+  zh_TW: 基於 act 的 Gitea 執行器
+website: https://gitea.com/gitea/act_runner
+architectures:
+  - amd64
+  - arm64
+environments:
+  GITEA_INSTANCE_URL:
+    description:
+      en: Gitea Instance URL
+      zh_CN: Gitea 实例 URL
+      zh_TW: Gitea 實例 URL
+    type: url
+    default:
+  GITEA_RUNNER_REGISTRATION_TOKEN:
+    description:
+      en: Gitea Runner Registration Token
+      zh_CN: Gitea 运行器注册令牌
+      zh_TW: Gitea 執行器註冊令牌
+    type: text
+    default:
+  RUNNER_NAME:
+    description:
+      en: Runner Name
+      zh_CN: 运行器名称
+      zh_TW: 執行器名稱
+    type: text
+    default: act-runner
+  RUNNER_LABELS:
+    description:
+      en: Runner Labels (comma separated)
+      zh_CN: 运行器标签（逗号分隔）
+      zh_TW: 執行器標籤（逗號分隔）
+    type: text
+    default: self-hosted,act-runner

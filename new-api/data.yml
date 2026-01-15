@@ -1,0 +1,30 @@
+name:
+  en: New API
+  zh_CN: New API
+  zh_TW: New API
+tags:
+  - ai
+  - tool
+description:
+  en: Next-generation LLM gateway and AI asset management system
+  zh_CN: 新一代 LLM 网关与 AI 资产管理系统
+  zh_TW: 新一代 LLM 網關與 AI 資產管理系統
+website: https://www.newapi.ai/
+architectures:
+  - amd64
+  - arm64
+environments:
+  NEW_API_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 3000
+  NEW_API_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

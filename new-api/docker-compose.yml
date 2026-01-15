@@ -1,0 +1,24 @@
+services:
+  new-api:
+    image: calciumion/new-api:v0.10.5
+    restart: always
+    ports:
+      - ${NEW_API_PORT_HTTP}:3000
+    networks:
+      - acepanel-network
+    command: --log-dir /app/logs
+    volumes:
+      - ./data:/data
+      - ./logs:/app/logs
+    environment:
+      - TZ=${NEW_API_TIME_ZONE}
+      - ERROR_LOG_ENABLED=true
+      - MEMORY_CACHE_ENABLED=true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:3000/api/status | grep -o '\"success\":\\s*true' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+networks:
+  acepanel-network:
+    external: true

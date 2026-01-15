@@ -1,0 +1,77 @@
+name:
+  en: Umami
+  zh_CN: Umami
+  zh_TW: Umami
+tags:
+  - tool
+  - monitor
+description:
+  en: Privacy-focused web analytics alternative to Google Analytics
+  zh_CN: 注重隐私的网站分析工具，Google Analytics 替代品
+  zh_TW: 注重隱私的網站分析工具，Google Analytics 替代品
+website: https://umami.is/
+architectures:
+  - amd64
+  - arm64
+environments:
+  UMAMI_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
+    type: port
+    default: 3000
+  UMAMI_DB_TYPE:
+    description:
+      en: Database Type
+      zh_CN: 数据库类型
+      zh_TW: 數據庫類型
+    type: select
+    default: postgresql
+    options:
+      - label: MySQL
+        value: mysql
+      - label: PostgreSQL
+        value: postgresql
+  UMAMI_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库主机
+      zh_TW: 數據庫主機
+    type: text
+    default: localhost
+  UMAMI_DB_PORT:
+    description:
+      en: Database Port
+      zh_CN: 数据库端口
+      zh_TW: 數據庫端口
+    type: port
+    default: 5432
+  UMAMI_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 數據庫名稱
+    type: text
+    default: umami
+  UMAMI_DB_USER:
+    description:
+      en: Database User
+      zh_CN: 数据库用户
+      zh_TW: 數據庫用戶
+    type: text
+    default: umami
+  UMAMI_DB_USER_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 數據庫密碼
+    type: password
+    default: ""
+  HASH_SALT:
+    description:
+      en: App Secret (Hash Salt)
+      zh_CN: 应用密钥（哈希盐）
+      zh_TW: 應用密鑰（哈希鹽）
+    type: password
+    default: ""

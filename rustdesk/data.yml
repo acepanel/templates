@@ -1,0 +1,58 @@
+name:
+  en: RustDesk
+  zh_CN: RustDesk
+  zh_TW: RustDesk
+tags:
+  - tool
+  - game
+description:
+  en: Open source remote desktop software
+  zh_CN: 开源远程桌面软件
+  zh_TW: 開源遠程桌面軟件
+website: https://rustdesk.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  HOST_ADDRESS:
+    description:
+      en: Host Address
+      zh_CN: 主机地址
+      zh_TW: 主機地址
+    type: text
+    default: ""
+  RUSTDESK_PORT_NAT:
+    description:
+      en: NAT Port
+      zh_CN: NAT 端口
+      zh_TW: NAT 端口
+    type: port
+    default: 21115
+  RUSTDESK_PORT_HBBS:
+    description:
+      en: HBBS Port
+      zh_CN: HBBS 端口
+      zh_TW: HBBS 端口
+    type: port
+    default: 21116
+  RUSTDESK_PORT_HBBR:
+    description:
+      en: HBBR Port
+      zh_CN: HBBR 端口
+      zh_TW: HBBR 端口
+    type: port
+    default: 21117
+  RUSTDESK_PORT_WEB_CLIENT_1:
+    description:
+      en: Web Client Port 1
+      zh_CN: Web 客户端端口 1
+      zh_TW: Web 客戶端端口 1
+    type: port
+    default: 21118
+  RUSTDESK_PORT_WEB_CLIENT_2:
+    description:
+      en: Web Client Port 2
+      zh_CN: Web 客户端端口 2
+      zh_TW: Web 客戶端端口 2
+    type: port
+    default: 21119

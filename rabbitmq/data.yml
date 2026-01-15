@@ -1,0 +1,43 @@
+name:
+  en: RabbitMQ
+  zh_CN: RabbitMQ
+  zh_TW: RabbitMQ
+tags:
+  - middleware
+description:
+  en: Feature-rich multi-protocol messaging broker
+  zh_CN: 功能丰富的多协议消息代理
+  zh_TW: 功能豐富的多協議消息代理
+website: https://www.rabbitmq.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  RABBITMQ_DEFAULT_USER:
+    description:
+      en: Default Username
+      zh_CN: 默认用户名
+      zh_TW: 默認用戶名
+    type: text
+    default: admin
+  RABBITMQ_DEFAULT_PASS:
+    description:
+      en: Default Password
+      zh_CN: 默认密码
+      zh_TW: 默認密碼
+    type: password
+    default: ""
+  RABBITMQ_PORT_SERVICE:
+    description:
+      en: Service Port
+      zh_CN: 服务端口
+      zh_TW: 服務端口
+    type: port
+    default: 5672
+  RABBITMQ_PORT_HTTP:
+    description:
+      en: HTTP Management Port
+      zh_CN: HTTP 管理端口
+      zh_TW: HTTP 管理端口
+    type: port
+    default: 15672

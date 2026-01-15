@@ -1,0 +1,17 @@
+services:
+  mariadb:
+    image: mariadb:11.8.5
+    restart: always
+    networks:
+      - acepanel-network
+    ports:
+      - ${MARIADB_PORT}:3306
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./conf/my.cnf:/etc/mysql/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MARIADB_DB_ROOT_PASSWORD}
+
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,112 @@
+name:
+  en: Nacos
+  zh_CN: Nacos
+  zh_TW: Nacos
+tags:
+  - middleware
+  - devops
+description:
+  en: Dynamic service discovery, configuration and service management platform
+  zh_CN: 动态服务发现、配置和服务管理平台
+  zh_TW: 動態服務發現、配置和服務管理平台
+website: https://nacos.io/
+architectures:
+  - amd64
+  - arm64
+environments:
+  NACOS_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8080
+  NACOS_PORT_API_HTTP:
+    description:
+      en: API HTTP Port
+      zh_CN: API HTTP 端口
+      zh_TW: API HTTP 埠
+    type: port
+    default: 8848
+  NACOS_PORT_COMMUNICATION:
+    description:
+      en: Communication Port
+      zh_CN: 通信端口
+      zh_TW: 通信埠
+    type: port
+    default: 9848
+  NACOS_JVM_XMS:
+    description:
+      en: JVM XMS
+      zh_CN: JVM XMS
+      zh_TW: JVM XMS
+    type: text
+    default: "512m"
+  NACOS_JVM_XMX:
+    description:
+      en: JVM XMX
+      zh_CN: JVM XMX
+      zh_TW: JVM XMX
+    type: text
+    default: "512m"
+  NACOS_JVM_XMN:
+    description:
+      en: JVM XMN
+      zh_CN: JVM XMN
+      zh_TW: JVM XMN
+    type: text
+    default: "256m"
+  NACOS_JVM_MS:
+    description:
+      en: JVM MS
+      zh_CN: JVM MS
+      zh_TW: JVM MS
+    type: text
+    default: "128m"
+  NACOS_JVM_MMS:
+    description:
+      en: JVM MMS
+      zh_CN: JVM MMS
+      zh_TW: JVM MMS
+    type: text
+    default: "320m"
+  NACOS_AUTH_ENABLE:
+    description:
+      en: Enable Authentication
+      zh_CN: 启用认证
+      zh_TW: 啟用認證
+    type: select
+    default: "FALSE"
+    options:
+      - label: "TRUE"
+        value: "TRUE"
+      - label: "FALSE"
+        value: "FALSE"
+  NACOS_AUTH_IDENTITY_KEY:
+    description:
+      en: Auth Identity Key
+      zh_CN: 认证身份密钥
+      zh_TW: 認證身份密鑰
+    type: text
+    default: ""
+  NACOS_AUTH_IDENTITY_VALUE:
+    description:
+      en: Auth Identity Value
+      zh_CN: 认证身份值
+      zh_TW: 認證身份值
+    type: text
+    default: ""
+  NACOS_AUTH_TOKEN:
+    description:
+      en: Auth Token
+      zh_CN: 认证令牌
+      zh_TW: 認證令牌
+    type: text
+    default: ""
+  NACOS_SERVER_IP:
+    description:
+      en: Server IP
+      zh_CN: 服务器 IP
+      zh_TW: 服務器 IP
+    type: text
+    default: ""

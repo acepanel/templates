@@ -1,0 +1,18 @@
+services:
+  rustfs:
+    image: rustfs/rustfs:latest
+    ports:
+      - ${RUSTFS_PORT_API}:9000
+      - ${RUSTFS_PORT_HTTP}:9001
+    restart: always
+    environment:
+      RUSTFS_ACCESS_KEY: ${RUSTFS_ACCESS_KEY}
+      RUSTFS_SECRET_KEY: ${RUSTFS_SECRET_KEY}
+      RUSTFS_CONSOLE_ENABLE: ${RUSTFS_CONSOLE_ENABLE}
+    volumes:
+      - ./data:/data
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true
