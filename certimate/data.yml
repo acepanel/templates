@@ -9,7 +9,7 @@ description:
   en: Secure and user-friendly SSL certificate management solution
   zh_CN: 安全易用的 SSL 证书管理解决方案
   zh_TW: 安全易用的 SSL 證書管理解決方案
-website: https://docs.certimate.me
+website: https://docs.certimate.me/
 architectures:
   - amd64
   - arm64

@@ -8,7 +8,7 @@ description:
   en: PostgreSQL management and development platform
   zh_CN: PostgreSQL 管理与开发平台
   zh_TW: PostgreSQL 管理與開發平台
-website: https://www.pgadmin.org
+website: https://www.pgadmin.org/
 architectures:
   - amd64
   - arm64

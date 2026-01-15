@@ -9,7 +9,7 @@ description:
   en: Distributed RESTful search and analytics engine
   zh_CN: 分布式 RESTful 搜索和分析引擎
   zh_TW: 分佈式 RESTful 搜索和分析引擎
-website: https://www.elastic.co
+website: https://www.elastic.co/
 architectures:
   - amd64
   - arm64

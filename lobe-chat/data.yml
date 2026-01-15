@@ -9,7 +9,7 @@ description:
   en: Modern ChatGPT/LLMs chat application and development framework
   zh_CN: 现代化的 ChatGPT/LLMs 聊天应用与开发框架
   zh_TW: 現代化的 ChatGPT/LLMs 聊天應用與開發框架
-website: https://lobehub.com
+website: https://lobehub.com/
 architectures:
   - amd64
   - arm64

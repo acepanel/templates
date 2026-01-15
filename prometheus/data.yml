@@ -8,7 +8,7 @@ description:
   en: Open source monitoring and alerting toolkit
   zh_CN: 开源监控和告警工具包
   zh_TW: 開源監控和告警工具包
-website: https://prometheus.io
+website: https://prometheus.io/
 architectures:
   - amd64
   - arm64

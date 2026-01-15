@@ -8,7 +8,7 @@ description:
   en: Complete DevOps platform with version control, CI/CD, and project management
   zh_CN: 完整的 DevOps 平台，包含版本控制、CI/CD 和项目管理
   zh_TW: 完整的 DevOps 平台，包含版本控制、CI/CD 和項目管理
-website: https://about.gitlab.com
+website: https://about.gitlab.com/
 architectures:
   - amd64
   - arm64

@@ -9,7 +9,7 @@ description:
   en: Developer-oriented service health monitoring dashboard
   zh_CN: 面向开发者的服务健康监控面板
   zh_TW: 面向開發者的服務健康監控面板
-website: https://gatus.io
+website: https://gatus.io/
 architectures:
   - amd64
   - arm64

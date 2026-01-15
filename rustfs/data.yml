@@ -9,7 +9,7 @@ description:
   en: High-performance distributed object storage system
   zh_CN: 高性能分布式对象存储系统
   zh_TW: 高性能分散式對象存儲系統
-website: https://rustfs.com
+website: https://rustfs.com/
 architectures:
   - amd64
   - arm64

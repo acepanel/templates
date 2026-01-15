@@ -8,7 +8,7 @@ description:
   en: Cross-platform high-performance chatbot framework
   zh_CN: 跨平台高性能聊天机器人框架
   zh_TW: 跨平台高性能聊天機器人框架
-website: https://koishi.chat
+website: https://koishi.chat/
 architectures:
   - amd64
   - arm64

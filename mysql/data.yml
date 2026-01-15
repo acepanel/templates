@@ -8,7 +8,7 @@ description:
   en: World's most popular open source relational database
   zh_CN: 全球最流行的开源关系型数据库
   zh_TW: 全球最流行的開源關係型數據庫
-website: https://www.mysql.com
+website: https://www.mysql.com/
 architectures:
   - amd64
   - arm64

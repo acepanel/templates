@@ -8,7 +8,7 @@ description:
   en: Scheduled task management platform
   zh_CN: 定时任务管理平台
   zh_TW: 定時任務管理平台
-website: https://qinglong.online
+website: https://qinglong.online/
 architectures:
   - amd64
   - arm64
