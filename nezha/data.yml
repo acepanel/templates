@@ -2,7 +2,7 @@ name:
   en: Nezha
   zh_CN: 哪吒监控
   zh_TW: 哪吒監控
-tags:
+categories:
   - monitor
   - tool
 description:

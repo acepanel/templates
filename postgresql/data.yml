@@ -2,7 +2,7 @@ name:
   en: PostgreSQL
   zh_CN: PostgreSQL
   zh_TW: PostgreSQL
-tags:
+categories:
   - database
 description:
   en: Powerful open source object-relational database system

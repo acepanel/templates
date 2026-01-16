@@ -2,7 +2,7 @@ name:
   en: pgAdmin 4
   zh_CN: pgAdmin 4
   zh_TW: pgAdmin 4
-tags:
+categories:
   - tool
 description:
   en: PostgreSQL management and development platform

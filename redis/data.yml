@@ -2,7 +2,7 @@ name:
   en: Redis
   zh_CN: Redis
   zh_TW: Redis
-tags:
+categories:
   - database
   - middleware
 description:

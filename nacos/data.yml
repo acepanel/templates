@@ -2,7 +2,7 @@ name:
   en: Nacos
   zh_CN: Nacos
   zh_TW: Nacos
-tags:
+categories:
   - middleware
   - devops
 description:
@@ -78,10 +78,8 @@ environments:
     type: select
     default: "FALSE"
     options:
-      - label: "TRUE"
-        value: "TRUE"
-      - label: "FALSE"
-        value: "FALSE"
+      "True": "TRUE"
+      "False": "FALSE"
   NACOS_AUTH_IDENTITY_KEY:
     description:
       en: Auth Identity Key

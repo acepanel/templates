@@ -1,0 +1,14 @@
+services:
+  dnsmgr:
+    image: netcccyun/dnsmgr:latest
+    restart: always
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data:/app/www
+    ports:
+      - ${DNSMGR_PORT_HTTP}:80
+
+networks:
+  acepanel-network:
+    external: true

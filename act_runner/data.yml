@@ -2,7 +2,7 @@ name:
   en: Act Runner
   zh_CN: Act Runner
   zh_TW: Act Runner
-tags:
+categories:
   - devops
 description:
   en: A runner for Gitea based on act

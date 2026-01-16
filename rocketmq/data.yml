@@ -2,7 +2,7 @@ name:
   en: RocketMQ
   zh_CN: RocketMQ
   zh_TW: RocketMQ
-tags:
+categories:
   - middleware
 description:
   en: Cloud-native messaging and streaming platform

@@ -2,7 +2,7 @@ name:
   en: Certd
   zh_CN: Certd
   zh_TW: Certd
-tags:
+categories:
   - tool
   - devops
 description:

@@ -2,7 +2,7 @@ name:
   en: MySQL
   zh_CN: MySQL
   zh_TW: MySQL
-tags:
+categories:
   - database
 description:
   en: World's most popular open source relational database

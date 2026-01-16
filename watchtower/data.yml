@@ -2,7 +2,7 @@ name:
   en: Watchtower
   zh_CN: Watchtower
   zh_TW: Watchtower
-tags:
+categories:
   - tool
   - devops
 description:

@@ -2,7 +2,7 @@ name:
   en: Grafana
   zh_CN: Grafana
   zh_TW: Grafana
-tags:
+categories:
   - monitor
   - tool
 description:

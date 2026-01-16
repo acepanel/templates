@@ -2,7 +2,7 @@ name:
   en: Nextcloud
   zh_CN: Nextcloud
   zh_TW: Nextcloud
-tags:
+categories:
   - storage
   - tool
 description:

@@ -2,7 +2,7 @@ name:
   en: Home Assistant
   zh_CN: Home Assistant
   zh_TW: Home Assistant
-tags:
+categories:
   - ai
   - tool
 description:

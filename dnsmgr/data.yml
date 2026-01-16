@@ -1,0 +1,22 @@
+name:
+  en: Rainbow Aggregated DNSMgr
+  zh_CN: 彩虹聚合 DNS 管理系统
+  zh_TW: 彩虹聚合 DNS 管理系統
+categories:
+  - tool
+  - devops
+description:
+  en: Multi-platform DNS management system with failover switching and SSL certificate automation
+  zh_CN: 多平台 DNS 聚合管理系统，支持容灾切换和 SSL 证书自动化
+  zh_TW: 多平台 DNS 聚合管理系統，支援容災切換和 SSL 證書自動化
+website: https://github.com/netcccyun/dnsmgr
+architectures:
+  - amd64
+environments:
+  DNSMGR_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8081

@@ -2,7 +2,7 @@ name:
   en: Elasticsearch
   zh_CN: Elasticsearch
   zh_TW: Elasticsearch
-tags:
+categories:
   - middleware
   - database
 description:
@@ -29,10 +29,8 @@ environments:
     type: select
     default: "true"
     options:
-      - label: "True"
-        value: "true"
-      - label: "False"
-        value: "false"
+      "True": "true"
+      "False": "false"
   ELASTICSEARCH_PASSWORD:
     description:
       en: Password

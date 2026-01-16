@@ -2,7 +2,7 @@ name:
   en: RabbitMQ
   zh_CN: RabbitMQ
   zh_TW: RabbitMQ
-tags:
+categories:
   - middleware
 description:
   en: Feature-rich multi-protocol messaging broker

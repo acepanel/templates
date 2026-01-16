@@ -2,7 +2,7 @@ name:
   en: Koishi
   zh_CN: Koishi
   zh_TW: Koishi
-tags:
+categories:
   - tool
 description:
   en: Cross-platform high-performance chatbot framework

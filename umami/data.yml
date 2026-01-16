@@ -2,7 +2,7 @@ name:
   en: Umami
   zh_CN: Umami
   zh_TW: Umami
-tags:
+categories:
   - tool
   - monitor
 description:
@@ -29,10 +29,8 @@ environments:
     type: select
     default: postgresql
     options:
-      - label: MySQL
-        value: mysql
-      - label: PostgreSQL
-        value: postgresql
+      "MySQL": "mysql"
+      "PostgreSQL": "postgresql"
   UMAMI_DB_HOST:
     description:
       en: Database Host

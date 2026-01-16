@@ -2,7 +2,7 @@ name:
   en: Uptime Kuma
   zh_CN: Uptime Kuma
   zh_TW: Uptime Kuma
-tags:
+categories:
   - tool
   - devops
 description:

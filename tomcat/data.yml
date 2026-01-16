@@ -2,7 +2,7 @@ name:
   en: Apache Tomcat
   zh_CN: Apache Tomcat
   zh_TW: Apache Tomcat
-tags:
+categories:
   - middleware
 description:
   en: Open source Java Servlet container and web server

@@ -2,7 +2,7 @@ name:
   en: Qinglong
   zh_CN: 青龙
   zh_TW: 青龍
-tags:
+categories:
   - tool
 description:
   en: Scheduled task management platform

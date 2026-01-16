@@ -2,7 +2,7 @@ name:
   en: Prometheus
   zh_CN: Prometheus
   zh_TW: Prometheus
-tags:
+categories:
   - monitor
 description:
   en: Open source monitoring and alerting toolkit

@@ -2,7 +2,7 @@ name:
   en: MariaDB
   zh_CN: MariaDB
   zh_TW: MariaDB
-tags:
+categories:
   - database
 description:
   en: Open source relational database, MySQL fork

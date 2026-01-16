@@ -2,7 +2,7 @@ name:
   en: MS SQL Server
   zh_CN: MS SQL Server
   zh_TW: MS SQL Server
-tags:
+categories:
   - database
 description:
   en: Microsoft SQL Server relational database

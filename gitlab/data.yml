@@ -2,7 +2,7 @@ name:
   en: GitLab
   zh_CN: GitLab
   zh_TW: GitLab
-tags:
+categories:
   - devops
 description:
   en: Complete DevOps platform with version control, CI/CD, and project management

@@ -2,7 +2,7 @@ name:
   en: RustFS
   zh_CN: RustFS
   zh_TW: RustFS
-tags:
+categories:
   - middleware
   - storage
 description:
@@ -50,7 +50,5 @@ environments:
     type: select
     default: "true"
     options:
-      - label: "True"
-        value: "true"
-      - label: "False"
-        value: "false"
+      "True": "true"
+      "False": "false"

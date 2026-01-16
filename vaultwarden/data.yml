@@ -2,7 +2,7 @@ name:
   en: Vaultwarden
   zh_CN: Vaultwarden
   zh_TW: Vaultwarden
-tags:
+categories:
   - tool
   - safe
 description:

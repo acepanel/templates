@@ -2,7 +2,7 @@ name:
   en: Windows
   zh_CN: Windows
   zh_TW: Windows
-tags:
+categories:
   - tool
 description:
   en: Run Windows in Docker container with KVM acceleration

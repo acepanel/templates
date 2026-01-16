@@ -1,8 +1,8 @@
 name:
   en: Mliev DWZ
-  zh_CN: Mliev DWZ
-  zh_TW: Mliev DWZ
-tags:
+  zh_CN: 木雷坞短网址
+  zh_TW: 木雷坞短鏈接
+categories:
   - tool
 description:
   en: Enterprise-level URL shortener service platform
@@ -35,10 +35,8 @@ environments:
     type: apps
     default: mysql
     options:
-      - label: MySQL
-        value: mysql
-      - label: PostgreSQL
-        value: postgres
+      "MySQL": "mysql"
+      "PostgreSQL": "postgres"
   MLIEV_DWZ_DB_HOST:
     description:
       en: Database Host

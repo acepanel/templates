@@ -2,7 +2,7 @@ name:
   en: Ollama
   zh_CN: Ollama
   zh_TW: Ollama
-tags:
+categories:
   - ai
   - tool
 description:
