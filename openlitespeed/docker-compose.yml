@@ -1,0 +1,19 @@
+services:
+  openlitespeed:
+    image: litespeedtech/openlitespeed:latest
+    restart: always
+    ports:
+      - ${OPENLITESPEED_PORT_HTTP}:80
+      - ${OPENLITESPEED_PORT_HTTPS}:443
+      - ${OPENLITESPEED_PORT_ADMIN}:7080
+    volumes:
+      - ./lsws/conf:/usr/local/lsws/conf
+      - ./lsws/admin-conf:/usr/local/lsws/admin/conf
+      - ./sites:/var/www/vhosts
+      - ./logs:/usr/local/lsws/logs
+    networks:
+      - acepanel-network
+
+networks:
+  acepanel-network:
+    external: true

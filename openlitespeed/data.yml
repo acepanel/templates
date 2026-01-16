@@ -1,0 +1,36 @@
+name:
+  en: OpenLiteSpeed
+  zh_CN: OpenLiteSpeed
+  zh_TW: OpenLiteSpeed
+categories:
+  - web
+description:
+  en: High-performance open source web server with LiteSpeed Cache support
+  zh_CN: 高性能开源 Web 服务器，支持 LiteSpeed Cache
+  zh_TW: 高效能開源 Web 伺服器，支援 LiteSpeed Cache
+website: https://openlitespeed.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  OPENLITESPEED_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 80
+  OPENLITESPEED_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 443
+  OPENLITESPEED_PORT_ADMIN:
+    description:
+      en: Admin Panel Port
+      zh_CN: 管理面板端口
+      zh_TW: 管理面板埠
+    type: port
+    default: 7080

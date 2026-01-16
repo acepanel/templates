@@ -1,0 +1,22 @@
+name:
+  en: phpMyAdmin
+  zh_CN: phpMyAdmin
+  zh_TW: phpMyAdmin
+categories:
+  - tool
+description:
+  en: Web-based MySQL database management tool
+  zh_CN: 基于 Web 的 MySQL 数据库管理工具
+  zh_TW: 基於 Web 的 MySQL 資料庫管理工具
+website: https://www.phpmyadmin.net/
+architectures:
+  - amd64
+  - arm64
+environments:
+  PHPMYADMIN_PORT:
+    description:
+      en: The port on which phpMyAdmin will be accessible.
+      zh_CN: phpMyAdmin 可访问的端口。
+      zh_TW: phpMyAdmin 可訪問的端口。
+    type: port
+    default: 8080

@@ -1,0 +1,29 @@
+name:
+  en: Percona Server
+  zh_CN: Percona Server
+  zh_TW: Percona Server
+categories:
+  - database
+description:
+  en: Enhanced MySQL-compatible database with improved performance and features
+  zh_CN: 增强型 MySQL 兼容数据库，具有更好的性能和功能
+  zh_TW: 增強型 MySQL 相容資料庫，具有更好的效能和功能
+website: https://www.percona.com/mysql/software/percona-server-for-mysql
+architectures:
+  - amd64
+  - arm64
+environments:
+  PERCONA_ROOT_PASSWORD:
+    description:
+      en: Root Password
+      zh_CN: Root 密码
+      zh_TW: Root 密碼
+    type: password
+    default: ""
+  PERCONA_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 3306

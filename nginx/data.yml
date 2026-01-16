@@ -1,0 +1,29 @@
+name:
+  en: Nginx
+  zh_CN: Nginx
+  zh_TW: Nginx
+categories:
+  - web
+description:
+  en: High-performance HTTP server and reverse proxy
+  zh_CN: 高性能 HTTP 服务器和反向代理
+  zh_TW: 高效能 HTTP 伺服器和反向代理
+website: https://nginx.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  NGINX_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 80
+  NGINX_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 443

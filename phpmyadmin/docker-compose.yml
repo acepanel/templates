@@ -1,0 +1,14 @@
+services:
+  phpmyadmin:
+    image: phpmyadmin:5.2.3-alpine
+    restart: always
+    ports:
+      - ${PHPMYADMIN_PORT}:80
+    environment:
+      - HIDE_PHP_VERSION=true
+      - PMA_ARBITRARY=1
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true

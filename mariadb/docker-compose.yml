@@ -9,8 +9,17 @@ services:
     volumes:
       - ./db/data:/var/lib/mysql
       - ./conf/my.cnf:/etc/mysql/my.cnf
+      - ./log:/var/log/mysql
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     environment:
       MYSQL_ROOT_PASSWORD: ${MARIADB_DB_ROOT_PASSWORD}
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 5s
 
 networks:
   acepanel-network:
