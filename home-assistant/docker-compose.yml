@@ -10,4 +10,4 @@ services:
       - "/run/dbus:/run/dbus:ro"
     environment:
       - TZ=${HOME_ASSISTANT_TIME_ZONE}
-    image: homeassistant/home-assistant:2026.1.1
+    image: homeassistant/home-assistant:2026.1.2
