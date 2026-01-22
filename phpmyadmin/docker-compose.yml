@@ -1,6 +1,6 @@
 services:
   phpmyadmin:
-    image: phpmyadmin:5.2.3-alpine
+    image: phpmyadmin:5.2.3
     restart: always
     ports:
       - ${PHPMYADMIN_PORT}:80
