@@ -20,7 +20,7 @@ services:
       - NET_ADMIN
     volumes:
       - ./data:/storage
-    restart: always
+    restart: unless-stopped
     networks:
       - acepanel-network
 networks:

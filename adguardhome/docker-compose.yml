@@ -1,9 +1,9 @@
 services:
   adguardhome:
-    restart: always
+    image: adguard/adguardhome:v0.107.71
+    restart: unless-stopped
     networks:
       - acepanel-network
-    image: adguard/adguardhome:v0.107.71
     ports:
       - ${ADGUARDHOME_PORT_DNS}:53/tcp
       - ${ADGUARDHOME_PORT_DNS}:53/udp

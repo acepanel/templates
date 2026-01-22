@@ -4,7 +4,7 @@ services:
     ports:
       - ${RUSTFS_PORT_API}:9000
       - ${RUSTFS_PORT_HTTP}:9001
-    restart: always
+    restart: unless-stopped
     environment:
       RUSTFS_ACCESS_KEY: ${RUSTFS_ACCESS_KEY}
       RUSTFS_SECRET_KEY: ${RUSTFS_SECRET_KEY}

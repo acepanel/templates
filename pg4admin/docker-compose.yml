@@ -1,7 +1,7 @@
 services:
   pgadmin4:
     image: dpage/pgadmin4:9.11
-    restart: always
+    restart: unless-stopped
     user: "0:0"
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}

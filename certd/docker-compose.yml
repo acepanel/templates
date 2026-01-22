@@ -1,7 +1,7 @@
 services:
   certd:
     image: greper/certd:1.38.2
-    restart: always
+    restart: unless-stopped
     networks:
       - acepanel-network
     volumes:

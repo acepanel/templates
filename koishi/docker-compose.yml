@@ -1,7 +1,7 @@
 services:
   koishi:
     image: koishijs/koishi:v1.15.0
-    restart: always
+    restart: unless-stopped
     environment:
       - TZ=${KOISHI_TIME_ZONE}
     networks:

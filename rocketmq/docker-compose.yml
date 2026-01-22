@@ -45,7 +45,7 @@ services:
       - ./data/proxy/conf/rmq-proxy.json:/opt/rocketmq-5.2.0/conf/rmq-proxy.json
     command: sh mqproxy -pc /opt/rocketmq-5.2.0/conf/rmq-proxy.json
   dashboard:
-    image: apacherocketmq/rocketmq-dashboard:latest
+    image: apacherocketmq/rocketmq-dashboard:2.1.0
     links:
       - namesrv
     depends_on:

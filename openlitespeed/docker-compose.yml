@@ -1,7 +1,7 @@
 services:
   openlitespeed:
-    image: litespeedtech/openlitespeed:latest
-    restart: always
+    image: litespeedtech/openlitespeed:1.8.5-lsphp85
+    restart: unless-stopped
     ports:
       - ${OPENLITESPEED_PORT_HTTP}:80
       - ${OPENLITESPEED_PORT_HTTPS}:443

@@ -1,6 +1,7 @@
 services:
   elasticsearch:
-    restart: always
+    image: elasticsearch:9.2.4
+    restart: unless-stopped
     networks:
       - acepanel-network
     ports:
@@ -9,7 +10,6 @@ services:
       - "./data/data:/usr/share/elasticsearch/data"
       - "./data/backup:/usr/share/elasticsearch/backup"
       - "./data/conf/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
-    image: elasticsearch:9.2.4
     ulimits:
       memlock:
         soft: -1

@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:18.1-alpine
-    restart: always
+    restart: unless-stopped
     environment:
       - POSTGRES_USER=${POSTGRESQL_DB_ROOT_USER}
       - POSTGRES_PASSWORD=${POSTGRESQL_DB_ROOT_PASSWORD}

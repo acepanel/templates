@@ -1,7 +1,7 @@
 services:
   percona:
     image: percona:8.4
-    restart: always
+    restart: unless-stopped
     environment:
       - INIT_ROCKSDB=1
       - PERCONA_TELEMETRY_DISABLE=1

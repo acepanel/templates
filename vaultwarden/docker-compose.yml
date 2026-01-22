@@ -1,13 +1,13 @@
 services:
   bitwarden:
-    restart: always
+    image: vaultwarden/server:1.35.2-alpine
+    restart: unless-stopped
     networks:
       - acepanel-network
     ports:
       - "${VAULTWARDEN_PORT_HTTP}:80"
     volumes:
       - ./data:/data
-    image: vaultwarden/server:1.35.2-alpine
 networks:  
   acepanel-network:  
     external: true

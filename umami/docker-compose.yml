@@ -1,7 +1,7 @@
 services:
   umami:
     image: ghcr.io/umami-software/umami:${UMAMI_DB_TYPE}-v2.20.2
-    restart: always
+    restart: unless-stopped
     ports:
       - ${UMAMI_PORT_HTTP}:3000
     environment:

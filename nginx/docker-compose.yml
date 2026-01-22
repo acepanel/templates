@@ -1,7 +1,7 @@
 services:
   nginx:
     image: nginx:1.29.4-alpine
-    restart: always
+    restart: unless-stopped
     ports:
       - ${NGINX_PORT_HTTP}:80
       - ${NGINX_PORT_HTTPS}:443

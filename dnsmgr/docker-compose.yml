@@ -1,7 +1,7 @@
 services:
   dnsmgr:
     image: netcccyun/dnsmgr:latest
-    restart: always
+    restart: unless-stopped
     networks:
       - acepanel-network
     volumes:

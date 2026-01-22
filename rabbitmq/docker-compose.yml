@@ -2,7 +2,7 @@ services:
   rabbitmq:
     image: rabbitmq:4.2.2-management-alpine
     hostname: rabbitmq
-    restart: always
+    restart: unless-stopped
     ports:
         - ${RABBITMQ_PORT_SERVICE}:5672
         - ${RABBITMQ_PORT_HTTP}:15672

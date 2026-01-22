@@ -1,7 +1,7 @@
 services:
   dashboard:
     image: ghcr.io/nezhahq/nezha:v1.14.14
-    restart: always
+    restart: unless-stopped
     networks:
       - acepanel-network
     ports:

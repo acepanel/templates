@@ -1,7 +1,7 @@
 services:
   one-api:
     image: justsong/one-api:v0.6.10
-    restart: always
+    restart: unless-stopped
     ports:
       - ${ONE_API_PORT_HTTP}:3000
     networks:

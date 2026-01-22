@@ -1,7 +1,7 @@
 services:
   nextcloud:
     image: linuxserver/nextcloud:32.0.5
-    restart: always
+    restart: unless-stopped
     networks:
       - acepanel-network
     ports:

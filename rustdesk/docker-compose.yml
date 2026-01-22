@@ -1,6 +1,7 @@
 services:
   rustdesk-server:
-    restart: always
+    image: rustdesk/rustdesk-server-s6:1.1.15
+    restart: unless-stopped
     networks:
       - acepanel-network
     ports:
@@ -15,7 +16,6 @@ services:
     environment:
       - "RELAY=${HOST_ADDRESS}:${RUSTDESK_PORT_HBBR}"
       - "ENCRYPTED_ONLY=1"
-    image: rustdesk/rustdesk-server-s6:latest
 networks:  
   acepanel-network:  
     external: true
