@@ -14,13 +14,6 @@ architectures:
   - amd64
   - arm64
 environments:
-  OPENLIST_IMAGE:
-    description:
-      en: Docker Image
-      zh_CN: Docker 镜像
-      zh_TW: Docker 鏡像
-    type: text
-    default: "xhofe/openlist:latest"
   OPENLIST_PORT_HTTP:
     description:
       en: HTTP Port
@@ -28,13 +21,12 @@ environments:
       zh_TW: HTTP 埠
     type: port
     default: 5244
-  OPENLIST_PORT_S3:
+  OPENLIST_ADMIN_PASSWORD:
     description:
-      en: S3 Port
-      zh_CN: S3 端口
-      zh_TW: S3 埠
-    type: port
-    default: 5246
+      en: Admin Password
+      zh_CN: 管理员密码
+      zh_TW: 管理員密碼
+    type: password
   OPENLIST_TIME_ZONE:
     description:
       en: Time Zone

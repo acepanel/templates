@@ -1,16 +1,16 @@
 services:
   openlist:
-    image: ${OPENLIST_IMAGE}
-    restart: always
+    image: openlistteam/openlist:v4.1.9-aio
+    restart: unless-stopped
     user: "0:0"
     networks:
       - acepanel-network
     ports:
       - "${OPENLIST_PORT_HTTP}:5244"
-      - "${OPENLIST_PORT_S3}:5246"
     volumes:
       - ./data:/opt/openlist/data
     environment:
+      - OPENLIST_ADMIN_PASSWORD=${OPENLIST_ADMIN_PASSWORD}
       - TZ=${OPENLIST_TIME_ZONE}
       - UMASK=022
 networks:  
