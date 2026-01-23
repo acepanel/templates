@@ -1,0 +1,50 @@
+name:
+  en: WordPress
+  zh_CN: WordPress
+  zh_TW: WordPress
+categories:
+  - web
+description:
+  en: Open source content management system for blogs and websites
+  zh_CN: 开源内容管理系统，用于博客和网站建设
+  zh_TW: 開源內容管理系統，用於部落格和網站建設
+website: https://wordpress.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  WORDPRESS_PORT:
+    description:
+      en: Port
+      zh_CN: 端口
+      zh_TW: 埠
+    type: port
+    default: 8080
+  WORDPRESS_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库主机
+      zh_TW: 資料庫主機
+    type: string
+    default: ""
+  WORDPRESS_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 資料庫名稱
+    type: string
+    default: wordpress
+  WORDPRESS_DB_USER:
+    description:
+      en: Database User
+      zh_CN: 数据库用户
+      zh_TW: 資料庫使用者
+    type: string
+    default: wordpress
+  WORDPRESS_DB_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: ""
