@@ -13,13 +13,6 @@ architectures:
   - amd64
   - arm64
 environments:
-  TOMCAT_PASSWORD:
-    description:
-      en: Admin Password
-      zh_CN: 管理员密码
-      zh_TW: 管理員密碼
-    type: password
-    default: ""
   TOMCAT_PORT_HTTP:
     description:
       en: HTTP Port

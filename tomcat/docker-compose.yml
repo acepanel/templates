@@ -1,13 +1,15 @@
 services:
   tomcat:
-    image: bitnami/tomcat:latest
+    image: tomcat:11.0.15-jre21
     restart: unless-stopped
-    environment:
-      - TOMCAT_PASSWORD=${TOMCAT_PASSWORD}
     ports:
       - ${TOMCAT_PORT_HTTP}:8080
     volumes:
-      - ./data:/bitnami/tomcat
+      - "./webapps:/usr/local/tomcat/webapps"
+      # Create your own tomcat-users.xml to enable the manager app
+      # - "./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml"
+    entrypoint: |
+      bash -c 'cp -a webapps.dist/manager webapps/; exec catalina.sh run'
     networks:
       - acepanel-network
 networks:
