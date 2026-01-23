@@ -3,7 +3,7 @@ name:
   zh_CN: Nginx
   zh_TW: Nginx
 categories:
-  - web
+  - webserver
 description:
   en: High-performance HTTP server and reverse proxy
   zh_CN: 高性能 HTTP 服务器和反向代理

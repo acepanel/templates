@@ -3,7 +3,7 @@ name:
   zh_CN: OpenLiteSpeed
   zh_TW: OpenLiteSpeed
 categories:
-  - web
+  - webserver
 description:
   en: High-performance open source web server with LiteSpeed Cache support
   zh_CN: 高性能开源 Web 服务器，支持 LiteSpeed Cache
