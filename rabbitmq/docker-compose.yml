@@ -12,6 +12,12 @@ services:
     volumes:
         - ./data/:/var/lib/rabbitmq/
         - ./log/:/var/log/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
     networks:
       - acepanel-network
 networks:

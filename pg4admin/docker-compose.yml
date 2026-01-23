@@ -11,6 +11,12 @@ services:
       - ${PGADMIN_PORT}:80
     volumes:
       - ./data:/var/lib/pgadmin
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:80/misc/ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     networks:
       - acepanel-network
 networks:

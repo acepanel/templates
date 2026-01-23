@@ -10,7 +10,12 @@ services:
       - ${KOISHI_PORT_HTTP}:5140
     volumes:
       - ./data:/koishi
-
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsSL http://localhost:5140 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 networks:
   acepanel-network:
     external: true

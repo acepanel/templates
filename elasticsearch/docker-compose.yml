@@ -22,7 +22,12 @@ services:
       - ELASTIC_PASSWORD=${ELASTICSEARCH_PASSWORD}
       - xpack.security.enabled=${ELASTICSEARCH_SECURITY}
       - ${ELASTICSEARCH_JAVA_OPTS}
-
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsSL http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
 networks:
   acepanel-network:
     external: true

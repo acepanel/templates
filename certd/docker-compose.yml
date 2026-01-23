@@ -9,7 +9,12 @@ services:
     ports:
       - ${CERTD_PORT_HTTP}:7001
       - ${CERTD_PORT_HTTPS}:7002
-
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsSL http://localhost:7001 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 networks:
   acepanel-network:
     external: true

@@ -21,7 +21,12 @@ services:
       - REDIS_PASSWORD=${MLIEV_DWZ_REDIS_ROOT_PASSWORD}
       - REDIS_DB=0
       - GIN_MODE=release
-
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsSL http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 networks:
   acepanel-network:
     external: true

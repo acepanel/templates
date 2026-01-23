@@ -8,6 +8,12 @@ services:
       - "${VAULTWARDEN_PORT_HTTP}:80"
     volumes:
       - ./data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsSL http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 networks:  
   acepanel-network:  
     external: true

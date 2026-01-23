@@ -11,6 +11,12 @@ services:
       - ./data:/data
       - ./conf/redis.conf:/etc/redis/redis.conf
       - ./logs:/logs
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 networks:
   acepanel-network:
     external: true
