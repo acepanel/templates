@@ -15,22 +15,22 @@ architectures:
 environments:
   PGADMIN_PORT:
     description:
-      en: The port on which pgAdmin 4 will be accessible.
-      zh_CN: pgAdmin 4 可访问的端口。
-      zh_TW: pgAdmin 4 可訪問的端口。
+      en: Access Port
+      zh_CN: 访问端口
+      zh_TW: 訪問端口
     type: port
     default: 999
   PGADMIN_DEFAULT_EMAIL:
     description:
-      en: The email address for the default pgAdmin 4 administrator account.
-      zh_CN: 默认 pgAdmin 4 管理员账户的电子邮箱地址。
-      zh_TW: 預設 pgAdmin 4 管理員帳戶的電子郵件地址。
+      en: Administrator email
+      zh_CN: 管理员邮箱
+      zh_TW: 管理員郵箱
     type: text
     default:
   PGADMIN_DEFAULT_PASSWORD:
     description:
-      en: The password for the default pgAdmin 4 administrator account.
-      zh_CN: 默认 pgAdmin 4 管理员账户的密码。
-      zh_TW: 預設 pgAdmin 4 管理員帳戶的密碼。
+      en: Administrator password
+      zh_CN: 管理员密码
+      zh_TW: 管理員密碼
     type: password
     default:

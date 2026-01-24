@@ -15,8 +15,8 @@ architectures:
 environments:
   PHPMYADMIN_PORT:
     description:
-      en: The port on which phpMyAdmin will be accessible.
-      zh_CN: phpMyAdmin 可访问的端口。
-      zh_TW: phpMyAdmin 可訪問的端口。
+      en: Access Port
+      zh_CN: 访问端口
+      zh_TW: 訪問端口
     type: port
     default: 888
