@@ -17,6 +17,6 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
-networks:  
-  acepanel-network:  
+networks:
+  acepanel-network:
     external: true
