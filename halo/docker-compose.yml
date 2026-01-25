@@ -1,0 +1,27 @@
+services:
+  halo:
+    image: halohub/halo-pro:2.22.11
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - ${HOST_IP}:${HALO_APP_PORT_HTTP}:8090
+    volumes:
+      - ./data:/root/.halo2
+    environment:
+        - JVM_OPTS=
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8090/actuator/health/readiness" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    command:
+      - --spring.r2dbc.url=r2dbc:pool:${HALO_DB_TYPE}://${HALO_DB_HOST}:${HALO_DB_PORT}/${HALO_DB_NAME}
+      - --spring.r2dbc.username=${HALO_DB_USER}
+      - --spring.r2dbc.password=${HALO_DB_USER_PASSWORD}
+      - --spring.sql.init.platform=${HALO_DB_TYPE}
+      - --halo.external-url=${HALO_EXTERNAL_URL}
+networks:
+  acepanel-network:
+    external: true
