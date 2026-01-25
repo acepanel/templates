@@ -13,13 +13,6 @@ architectures:
   - amd64
   - arm64
 environments:
-  HALO_DB_HOST:
-    description:
-      en: Database Port
-      zh_CN: 数据库端口
-      zh_TW: 數據庫端口
-    type: port
-    default: 3306
   HALO_DB_TYPE:
     description:
       en: Database Type
@@ -31,31 +24,52 @@ environments:
       "MySQL": "mysql"
       "PostgreSQL": "postgresql"
       "MariaDB": "mariadb"
+  HALO_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库地址
+      zh_TW: 資料庫地址
+    type: text
+    default: 172.18.0.1
+  HALO_DB_PORT:
+    description:
+      en: Database Port
+      zh_CN: 数据库端口
+      zh_TW: 資料庫端口
+    type: port
+    default: 3306
+  HALO_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 資料庫名稱
+    type: port
+    default: 3306
   HALO_DB_USER:
     description:
       en: Database username
       zh_CN: 数据库用户
-      zh_TW: 數據庫用戶
+      zh_TW: 資料庫用戶
     type: text
     default: halo
   HALO_DB_PASSWORD:
     description:
       en: Database password
-      zh_CN: 数据库用户密码
-      zh_TW: 數據庫用戶密碼
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
     type: password
     default: halo
   HALO_EXTERNAL_URL:
     description:
       en: External URL
       zh_CN: 外部访问地址
-      zh_TW: 數據庫服務
+      zh_TW: 外部訪問地址
     type: url
     default: http://localhost:8090
   HALO_HTTP_PORT:
     description:
-      en: Port
-      zh_CN: 端口
-      zh_TW: 端口
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 端口
     type: port
     default: 8090
