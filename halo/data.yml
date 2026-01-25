@@ -43,8 +43,8 @@ environments:
       en: Database Name
       zh_CN: 数据库名称
       zh_TW: 資料庫名稱
-    type: port
-    default: 3306
+    type: text
+    default: halo
   HALO_DB_USER:
     description:
       en: Database username
