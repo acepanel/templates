@@ -5,12 +5,13 @@ name:
 categories:
   - dev
 description:
-  en: Open source content management system for blogs and websites
-  zh_CN: 开源内容管理系统，用于博客和网站建设
-  zh_TW: 開源內容管理系統，用於部落格和網站建設
+  en: Powerful and easy-to-use open source website builder
+  zh_CN: 强大易用的开源建站工具
+  zh_TW: 強大易用的開源建站工具
 website: https://www.halo.run/
 architectures:
   - amd64
+  - arm64
 environments:
   HALO_DB_HOST:
     description:
@@ -24,20 +25,20 @@ environments:
       en: Database Type
       zh_CN: 数据库类型
       zh_TW: 資料庫類型
-    type: apps
-    default: mysql
+    type: select
+    default: "mysql"
     options:
       "MySQL": "mysql"
-      "PostgreSQL": "postgres"
+      "PostgreSQL": "postgresql"
       "MariaDB": "mariadb"
   HALO_DB_USER:
     description:
       en: Database username
       zh_CN: 数据库用户
       zh_TW: 數據庫用戶
-    type: string
+    type: text
     default: halo
-  HALO_DB_USER_PASSWORD:
+  HALO_DB_PASSWORD:
     description:
       en: Database password
       zh_CN: 数据库用户密码
@@ -49,13 +50,12 @@ environments:
       en: External URL
       zh_CN: 外部访问地址
       zh_TW: 數據庫服務
-    type: string
+    type: url
     default: http://localhost:8090
-  HALO_APP_PORT_HTTP:
+  HALO_HTTP_PORT:
     description:
       en: Port
       zh_CN: 端口
       zh_TW: 端口
     type: port
     default: 8090
-  

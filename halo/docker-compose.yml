@@ -5,7 +5,7 @@ services:
     networks:
       - acepanel-network
     ports:
-      - ${HOST_IP}:${HALO_APP_PORT_HTTP}:8090
+      - ${HALO_HTTP_PORT}:8090
     volumes:
       - ./data:/root/.halo2
     environment:
@@ -19,7 +19,7 @@ services:
     command:
       - --spring.r2dbc.url=r2dbc:pool:${HALO_DB_TYPE}://${HALO_DB_HOST}:${HALO_DB_PORT}/${HALO_DB_NAME}
       - --spring.r2dbc.username=${HALO_DB_USER}
-      - --spring.r2dbc.password=${HALO_DB_USER_PASSWORD}
+      - --spring.r2dbc.password=${HALO_DB_PASSWORD}
       - --spring.sql.init.platform=${HALO_DB_TYPE}
       - --halo.external-url=${HALO_EXTERNAL_URL}
 networks:
