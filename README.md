@@ -1,1 +1,7 @@
-# Container templates for AcePanel
+# AcePanel 容器模版仓库
+
+目前收录要求（满足任一即可），欢迎提交 PR：
+
+1. 知名度较高的项目
+2. Star >= 2000
+3. 赞助商项目
