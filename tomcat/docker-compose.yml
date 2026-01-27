@@ -1,6 +1,6 @@
 services:
   tomcat:
-    image: tomcat:11.0.15-jre21
+    image: tomcat:11.0.18-jre21
     restart: unless-stopped
     ports:
       - ${TOMCAT_PORT_HTTP}:8080
