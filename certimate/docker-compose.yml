@@ -5,10 +5,6 @@ services:
       - acepanel-network
     ports:
       - ${CERTIMATE_PORT_HTTP}:8090
-    environment:
-      - http_proxy=${CERTIMATE_HTTP_PROXY}
-      - https_proxy=${CERTIMATE_HTTPS_PROXY}
-      - NO_PROXY=${CERTIMATE_NO_PROXY}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
