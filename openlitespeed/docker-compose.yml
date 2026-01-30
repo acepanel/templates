@@ -12,7 +12,7 @@ services:
       - ./sites:/var/www/vhosts
       - ./logs:/usr/local/lsws/logs
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsSL http://localhost:80 || exit 1"]
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:80 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3

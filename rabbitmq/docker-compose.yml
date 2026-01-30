@@ -4,16 +4,16 @@ services:
     hostname: rabbitmq
     restart: unless-stopped
     ports:
-        - ${RABBITMQ_PORT_SERVICE}:5672
-        - ${RABBITMQ_PORT_HTTP}:15672
+      - ${RABBITMQ_PORT_SERVICE}:5672
+      - ${RABBITMQ_PORT_HTTP}:15672
     environment:
       - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
       - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
     volumes:
-        - ./data/:/var/lib/rabbitmq/
-        - ./log/:/var/log/rabbitmq
+      - ./data/:/var/lib/rabbitmq/
+      - ./log/:/var/log/rabbitmq
     healthcheck:
-      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      test: [ "CMD", "rabbitmq-diagnostics", "-q", "ping" ]
       interval: 30s
       timeout: 10s
       retries: 5

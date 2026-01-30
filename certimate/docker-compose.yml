@@ -10,7 +10,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - ./data:/app/pb_data
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsSL http://localhost:8090 || exit 1"]
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:8090 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3

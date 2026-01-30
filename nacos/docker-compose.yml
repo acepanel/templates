@@ -23,7 +23,7 @@ services:
       - "${NACOS_PORT_API_HTTP}:8848"
       - "${NACOS_PORT_COMMUNICATION}:9848"
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsSL http://localhost:8848/nacos/v1/console/health/readiness || exit 1"]
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:8848/nacos/v1/console/health/readiness || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 5

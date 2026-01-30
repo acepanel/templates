@@ -10,7 +10,7 @@ services:
     volumes:
       - ./data:/var/lib/postgresql
     healthcheck:
-      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-p", "5432", "-q", "-U", "${POSTGRESQL_DB_ROOT_USER}"]
+      test: [ "CMD", "pg_isready", "-h", "127.0.0.1", "-p", "5432", "-q", "-U", "${POSTGRESQL_DB_ROOT_USER}" ]
       start_period: 20s
       interval: 30s
       retries: 5

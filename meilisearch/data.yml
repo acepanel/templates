@@ -1,0 +1,46 @@
+name:
+  en: Meilisearch
+  zh_CN: Meilisearch
+  zh_TW: Meilisearch
+categories:
+  - tool
+description:
+  en: A lightning-fast search engine that fits effortlessly into your apps
+  zh_CN: 一个闪电般快速的搜索引擎，可轻松集成到您的应用中
+  zh_TW: 一個閃電般快速的搜尋引擎，可輕鬆整合到您的應用程式中
+website: https://www.meilisearch.com
+architectures:
+  - amd64
+  - arm64
+environments:
+  MEILI_MASTER_KEY:
+    description:
+      en: Master Key (required for production)
+      zh_CN: 主密钥（生产环境必需）
+      zh_TW: 主密鑰（生產環境必需）
+    type: password
+    default:
+  MEILI_ENV:
+    description:
+      en: Environment
+      zh_CN: 运行环境
+      zh_TW: 執行環境
+    type: select
+    default: production
+    options:
+      "Production": "production"
+      "Development": "development"
+  MEILI_PORT:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 7700
+  MEILI_MAX_INDEXING_MEMORY:
+    description:
+      en: Maximum Indexing Memory
+      zh_CN: 最大索引内存
+      zh_TW: 最大索引記憶體
+    type: text
+    default: 2Gb

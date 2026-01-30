@@ -1,0 +1,24 @@
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.34.3
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - ${MEILI_PORT}:7700
+    volumes:
+      - ./data:/meili_data
+    environment:
+      - MEILI_NO_ANALYTICS=true
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+      - MEILI_ENV=${MEILI_ENV}
+      - MEILI_HTTP_ADDR=0.0.0.0:7700
+      - MEILI_MAX_INDEXING_MEMORY=${MEILI_MAX_INDEXING_MEMORY}
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:7700/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+networks:
+  acepanel-network:
+    external: true

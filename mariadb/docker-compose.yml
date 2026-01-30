@@ -15,7 +15,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MARIADB_DB_ROOT_PASSWORD}
     healthcheck:
-      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
       start_period: 20s
       interval: 30s
       retries: 5

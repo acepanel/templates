@@ -9,7 +9,7 @@ services:
       - ./data/namesrv/logs:/home/rocketmq/logs
     command: sh mqnamesrv
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 9876 || exit 1"]
+      test: [ "CMD-SHELL", "nc -z localhost 9876 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -32,7 +32,7 @@ services:
       - ./data/broker/conf/broker.conf:/opt/rocketmq-5.2.0/conf/broker.conf
     command: sh mqbroker -c /opt/rocketmq-5.2.0/conf/broker.conf
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 10911 || exit 1"]
+      test: [ "CMD-SHELL", "nc -z localhost 10911 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -57,7 +57,7 @@ services:
       - ./data/proxy/conf/rmq-proxy.json:/opt/rocketmq-5.2.0/conf/rmq-proxy.json
     command: sh mqproxy -pc /opt/rocketmq-5.2.0/conf/rmq-proxy.json
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 8080 || exit 1"]
+      test: [ "CMD-SHELL", "nc -z localhost 8080 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -76,7 +76,7 @@ services:
     environment:
       - JAVA_OPTS=-Drocketmq.namesrv.addr=namesrv:9876
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsSL http://localhost:8082 || exit 1"]
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:8082 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 5

@@ -12,7 +12,7 @@ services:
     environment:
       - TZ=${HOME_ASSISTANT_TIME_ZONE}
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsSL http://localhost:8123 || exit 1"]
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:8123 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3

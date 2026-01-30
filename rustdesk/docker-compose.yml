@@ -17,7 +17,7 @@ services:
       - "RELAY=${HOST_ADDRESS}:${RUSTDESK_PORT_HBBR}"
       - "ENCRYPTED_ONLY=1"
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 21116 || exit 1"]
+      test: [ "CMD-SHELL", "nc -z localhost 21116 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3
