@@ -27,14 +27,14 @@ environments:
       zh_TW: Gitea 執行器註冊令牌
     type: text
     default:
-  RUNNER_NAME:
+  GITEA_RUNNER_NAME:
     description:
       en: Runner Name
       zh_CN: 运行器名称
       zh_TW: 執行器名稱
     type: text
     default: act-runner
-  RUNNER_LABELS:
+  GITEA_RUNNER_LABELS:
     description:
       en: Runner Labels (comma separated)
       zh_CN: 运行器标签（逗号分隔）
