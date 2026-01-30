@@ -3,6 +3,7 @@ services:
     # You need to run `node dist/index.js onboard` to initialize the config files after the first launch.
     image: ghcr.io/openclaw/openclaw:latest
     environment:
+      UMASK: 022
       HOME: /home/node
       TERM: xterm-256color
       BROWSER: echo
@@ -13,6 +14,7 @@ services:
     ports:
       - "${OPENCLAW_GATEWAY_PORT}:18789"
       - "${OPENCLAW_BRIDGE_PORT}:18790"
+    user: "0:0"
     init: true
     stdin_open: true
     tty: true
