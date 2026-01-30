@@ -1,0 +1,35 @@
+services:
+  openclaw:
+    # You need to run `node dist/index.js onboard` to initialize the config files after the first launch.
+    image: ghcr.io/openclaw/openclaw:latest
+    environment:
+      HOME: /home/node
+      TERM: xterm-256color
+      BROWSER: echo
+      OPENCLAW_GATEWAY_TOKEN: "${OPENCLAW_GATEWAY_TOKEN}"
+    volumes:
+      - ./data/config:/home/node/.openclaw
+      - ./data/workspace:/home/node/.openclaw/workspace
+    ports:
+      - "${OPENCLAW_GATEWAY_PORT}:18789"
+      - "${OPENCLAW_BRIDGE_PORT}:18790"
+    init: true
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    command:
+      [
+        "node",
+        "dist/index.js",
+        "gateway",
+        "--bind",
+        "lan",
+        "--port",
+        "18789",
+        "--allow-unconfigured"
+      ]
+networks:
+  acepanel-network:
+    external: true

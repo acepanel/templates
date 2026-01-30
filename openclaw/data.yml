@@ -1,0 +1,37 @@
+name:
+  en: OpenClaw
+  zh_CN: OpenClaw
+  zh_TW: OpenClaw
+categories:
+  - ai
+  - tool
+description:
+  en: Your own personal AI assistant. Any OS. Any Platform.
+  zh_CN: 你自己的个人 AI 助手。任何操作系统。任何平台。
+  zh_TW: 你自己的個人 AI 助手。任何操作系統。任何平台。
+website: https://openclaw.ai/
+architectures:
+  - amd64
+  - arm64
+environments:
+  OPENCLAW_GATEWAY_PORT:
+    description:
+      en: Gateway Port
+      zh_CN: 网关端口
+      zh_TW: 網關端口
+    type: port
+    default: 18789
+  OPENCLAW_BRIDGE_PORT:
+    description:
+      en: Bridge Port
+      zh_CN: 桥接端口
+      zh_TW: 橋接端口
+    type: port
+    default: 18790
+  OPENCLAW_GATEWAY_TOKEN:
+    description:
+      en: Gateway Token
+      zh_CN: 网关令牌
+      zh_TW: 網關令牌
+    type: password
+    default:
