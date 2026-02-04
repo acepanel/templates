@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:6.9.0-php8.4
+    image: wordpress:6.9.1-php8.4
     restart: unless-stopped
     networks:
       - acepanel-network

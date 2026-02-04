@@ -1,6 +1,6 @@
 services:
   elasticsearch:
-    image: elasticsearch:9.2.4
+    image: elasticsearch:9.3.0
     restart: unless-stopped
     networks:
       - acepanel-network
