@@ -1,6 +1,6 @@
 services:
   ollama:
-    image: ollama/ollama:0.15.5
+    image: ollama/ollama:0.15.6
     restart: unless-stopped
     ports:
       - ${OLLAMA_PORT_HTTP}:11434
