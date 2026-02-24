@@ -3,7 +3,7 @@ module acepanel-templates
 go 1.25.5
 
 require (
-	github.com/go-resty/resty/v2 v2.17.1
+	github.com/go-resty/resty/v2 v2.17.2
 	go.yaml.in/yaml/v4 v4.0.0-rc.4
 )
 
