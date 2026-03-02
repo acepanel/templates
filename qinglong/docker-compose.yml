@@ -1,6 +1,6 @@
 services:
   qinglong:
-    image: whyour/qinglong:2.20.1
+    image: whyour/qinglong:2.20.2
     networks:
       - acepanel-network
     volumes:
