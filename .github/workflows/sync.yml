@@ -1,0 +1,29 @@
+name: Sync
+on:
+  workflow_dispatch:
+concurrency:
+  group: sync
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+          package_json_file: web/package.json
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          cache: true
+          go-version: 'stable'
+      - name: Sync to API
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          go run main.go
