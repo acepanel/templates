@@ -1,6 +1,6 @@
 services:
   gitea:
-    image: docker.gitea.com/gitea:latest-rootless
+    image: gitea/gitea:1.25.4
     restart: unless-stopped
     environment:
       - USER_UID=1000
