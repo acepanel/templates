@@ -3,6 +3,8 @@ services:
     image: docker.gitea.com/gitea:latest-rootless
     restart: unless-stopped
     environment:
+      - USER_UID=1000
+      - USER_GID=1000
       - GITEA__database__DB_TYPE=${GITEA_DB_TYPE}
       - GITEA__database__HOST=${GITEA_DB_HOST}
       - GITEA__database__NAME=${GITEA_DB_NAME}
