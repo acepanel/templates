@@ -6,8 +6,8 @@ categories:
   - devops
 description:
   en: The Best Open Source Self-Hosted Git Service
-  zh_CN: 开源的自托管Git服务器
-  zh_TW: 開放原始碼的自架Git伺服器
+  zh_CN: 开源的自托管 Git 服务器
+  zh_TW: 開放原始碼的自架 Git 伺服器
 website: https://about.gitea.com/products/gitea/
 architectures:
   - amd64
