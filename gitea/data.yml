@@ -1,0 +1,68 @@
+name:
+  en: Gitea
+  zh_CN: Gitea
+  zh_TW: Gitea
+categories:
+  - devops
+description:
+  en: The Best Open Source Self-Hosted Git Service
+  zh_CN: 开源的自托管 Git 服务器
+  zh_TW: 開放原始碼的自架 Git 伺服器
+website: https://about.gitea.com/products/gitea/
+architectures:
+  - amd64
+  - arm64
+environments:
+  GITEA_DB_TYPE:
+    description:
+      en: Database Type
+      zh_CN: 数据库类型
+      zh_TW: 資料庫類別
+    type: select
+    default: sqlite3
+    options:
+      "SQLite": "sqlite3"
+      "MySQL": "mysql"
+      "PostgreSQL": "postgres"
+  GITEA_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库地址
+      zh_TW: 資料庫主機
+    type: text
+    default: "your-db-host:3306"
+  GITEA_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名
+      zh_TW: 資料庫名稱
+    type: text
+    default: gitea
+  GITEA_DB_USER:
+    description:
+      en: Database Username
+      zh_CN: 数据库用户名
+      zh_TW: 資料庫用戶名
+    type: text
+    default: gitea
+  GITEA_DB_PASS:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: ""
+  GITEA_WEB_PORT:
+    description:
+      en: Web Port
+      zh_CN: Web 端口号
+      zh_TW: Web 連接埠號
+    type: port
+    default: 3000
+  GITEA_SSH_PORT:
+    description:
+      en: SSH Port
+      zh_CN: SSH 端口号
+      zh_TW: SSH 連接埠號
+    type: port
+    default: 2222

@@ -25,7 +25,7 @@ environments:
     description:
       en: Database Type
       zh_CN: 数据库类型
-      zh_TW: 數據庫類型
+      zh_TW: 資料庫類別
     type: select
     default: postgresql
     options:
