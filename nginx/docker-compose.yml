@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:1.29.5-alpine
+    image: nginx:1.29.6-alpine
     restart: unless-stopped
     ports:
       - ${NGINX_PORT_HTTP}:80
