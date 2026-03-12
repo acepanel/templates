@@ -37,7 +37,7 @@ environments:
       zh_CN: 数据库主机
       zh_TW: 數據庫主機
     type: text
-    default: localhost
+    default: "host.docker.internal"
   UMAMI_DB_PORT:
     description:
       en: Database Port
@@ -51,14 +51,14 @@ environments:
       zh_CN: 数据库名称
       zh_TW: 數據庫名稱
     type: text
-    default: umami
+    default: "umami"
   UMAMI_DB_USER:
     description:
       en: Database User
       zh_CN: 数据库用户
       zh_TW: 數據庫用戶
     type: text
-    default: umami
+    default: "umami"
   UMAMI_DB_USER_PASSWORD:
     description:
       en: Database Password

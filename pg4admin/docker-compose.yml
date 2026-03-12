@@ -3,6 +3,8 @@ services:
     image: dpage/pgadmin4:9.13
     restart: unless-stopped
     user: "0:0"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}

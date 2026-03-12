@@ -30,7 +30,7 @@ environments:
       zh_CN: 数据库地址
       zh_TW: 資料庫地址
     type: text
-    default: 172.18.0.1
+    default: "host.docker.internal"
   HALO_DB_PORT:
     description:
       en: Database Port

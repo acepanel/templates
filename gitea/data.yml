@@ -30,7 +30,7 @@ environments:
       zh_CN: 数据库地址
       zh_TW: 資料庫主機
     type: text
-    default: "your-db-host:3306"
+    default: "host.docker.internal:3306"
   GITEA_DB_NAME:
     description:
       en: Database Name

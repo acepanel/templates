@@ -8,6 +8,8 @@ services:
       - ${MLIEV_DWZ_PORT_HTTP}:8080
     volumes:
       - "./config/:/app/config/"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       - TZ=${MLIEV_DWZ_TIME_ZONE}
       - DATABASE_DRIVER=${MLIEV_DWZ_DB_TYPE}

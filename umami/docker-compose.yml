@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - ${UMAMI_PORT_HTTP}:3000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       DATABASE_TYPE: ${UMAMI_DB_TYPE}
       DATABASE_URL: ${UMAMI_DB_TYPE}://${UMAMI_DB_USER}:${UMAMI_DB_USER_PASSWORD}@${UMAMI_DB_HOST}:${UMAMI_DB_PORT}/${UMAMI_DB_NAME}

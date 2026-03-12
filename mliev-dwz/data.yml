@@ -43,7 +43,7 @@ environments:
       zh_CN: 数据库主机
       zh_TW: 資料庫主機
     type: text
-    default: ""
+    default: "host.docker.internal"
   MLIEV_DWZ_DB_PORT:
     description:
       en: Database Port
@@ -78,7 +78,7 @@ environments:
       zh_CN: Redis 主机
       zh_TW: Redis 主機
     type: text
-    default: ""
+    default: "host.docker.internal"
   MLIEV_DWZ_REDIS_ROOT_PASSWORD:
     description:
       en: Redis Password
