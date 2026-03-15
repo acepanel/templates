@@ -33,7 +33,7 @@ environments:
       zh_CN: 数据库类型
       zh_TW: 資料庫類型
     type: apps
-    default: mysql
+    default: "mysql"
     options:
       "MySQL": "mysql"
       "PostgreSQL": "postgres"

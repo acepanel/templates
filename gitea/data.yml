@@ -19,7 +19,7 @@ environments:
       zh_CN: 数据库类型
       zh_TW: 資料庫類別
     type: select
-    default: sqlite3
+    default: "mysql"
     options:
       "SQLite": "sqlite3"
       "MySQL": "mysql"
