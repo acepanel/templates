@@ -5,7 +5,7 @@ name:
 categories:
   - devops
 description:
-  en: Forgejo is a self-hosted lightweight software forge; A hard-fork of Gitea.
+  en: Forgejo is a self-hosted lightweight software forge, a hard fork of Gitea.
   zh_CN: Forgejo是一个自托管的轻量级软件源代码托管平台，是Gitea的硬分叉。
   zh_TW: Forgejo是一個可自架的輕量級軟體專案托管平臺，是Gitea的硬分叉。
 website: https://forgejo.org/
