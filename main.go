@@ -61,21 +61,33 @@ func main() {
 			continue
 		}
 
+		// Also parse into Node to preserve YAML key ordering
+		var docNode yaml.Node
+		if err := yaml.Unmarshal(data, &docNode); err != nil {
+			fmt.Printf("Error parsing %s: %v\n", dataPath, err)
+			continue
+		}
+
 		// Add directory name as template slug
 		template["slug"] = entry.Name()
 
-		// Convert environments from map to array format
+		// Convert environments from map to array format, preserving YAML order
 		// From: {ENV_NAME: {description: xxx, type: xxx, default: xxx}}
 		// To: [{name: ENV_NAME, description: xxx, type: xxx, default: xxx}]
 		if envMap, ok := template["environments"].(map[string]any); ok {
 			envArray := make([]map[string]any, 0, len(envMap))
-			for name, value := range envMap {
-				if envValue, ok := value.(map[string]any); ok {
-					envItem := map[string]any{"name": name}
-					for k, v := range envValue {
-						envItem[k] = v
+			if envNode := findNodeValue(&docNode, "environments"); envNode != nil {
+				for i := 0; i < len(envNode.Content)-1; i += 2 {
+					name := envNode.Content[i].Value
+					if value, exists := envMap[name]; exists {
+						if envValue, ok := value.(map[string]any); ok {
+							envItem := map[string]any{"name": name}
+							for k, v := range envValue {
+								envItem[k] = v
+							}
+							envArray = append(envArray, envItem)
+						}
 					}
-					envArray = append(envArray, envItem)
 				}
 			}
 			template["environments"] = envArray
@@ -164,4 +176,20 @@ func main() {
 	}
 
 	fmt.Println("\nImport completed!")
+}
+
+// findNodeValue finds the value node for a given key in a YAML document's root mapping.
+func findNodeValue(node *yaml.Node, key string) *yaml.Node {
+	if node.Kind == yaml.DocumentNode && len(node.Content) > 0 {
+		node = node.Content[0]
+	}
+	if node.Kind != yaml.MappingNode {
+		return nil
+	}
+	for i := 0; i < len(node.Content)-1; i += 2 {
+		if node.Content[i].Value == key {
+			return node.Content[i+1]
+		}
+	}
+	return nil
 }
