@@ -1,0 +1,68 @@
+name:
+  en: Forgejo
+  zh_CN: Forgejo
+  zh_TW: Forgejo
+categories:
+  - devops
+description:
+  en: Forgejo is a self-hosted lightweight software forge
+  zh_CN: Forgejo 是一个自托管的轻量级软件代码托管平台
+  zh_TW: Forgejo 是一個可自架的輕量級軟體專案托管平臺
+website: https://forgejo.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  FORGEJO_DB_TYPE:
+    description:
+      en: Database Type
+      zh_CN: 数据库类型
+      zh_TW: 資料庫類別
+    type: select
+    default: sqlite3
+    options:
+      "SQLite": "sqlite3"
+      "MySQL": "mysql"
+      "PostgreSQL": "postgres"
+  FORGEJO_DB_HOST:
+    description:
+      en: Database Host
+      zh_CN: 数据库地址
+      zh_TW: 資料庫主機
+    type: text
+    default: "host.docker.internal:3306"
+  FORGEJO_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名
+      zh_TW: 資料庫名稱
+    type: text
+    default: forgejo
+  FORGEJO_DB_USER:
+    description:
+      en: Database Username
+      zh_CN: 数据库用户名
+      zh_TW: 資料庫用戶名
+    type: text
+    default: forgejo
+  FORGEJO_DB_PASS:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: ""
+  FORGEJO_WEB_PORT:
+    description:
+      en: Web Port
+      zh_CN: Web 端口号
+      zh_TW: Web 連接埠號
+    type: port
+    default: 3000
+  FORGEJO_SSH_PORT:
+    description:
+      en: SSH Port
+      zh_CN: SSH 端口号
+      zh_TW: SSH 連接埠號
+    type: port
+    default: 2222

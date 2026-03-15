@@ -1,0 +1,32 @@
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:14.0.3
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - FORGEJO__database__DB_TYPE=${FORGEJO_DB_TYPE}
+      - FORGEJO__database__HOST=${FORGEJO_DB_HOST}
+      - FORGEJO__database__NAME=${FORGEJO_DB_NAME}
+      - FORGEJO__database__USER=${FORGEJO_DB_USER}
+      - FORGEJO__database__PASSWD=${FORGEJO_DB_PASS}
+    ports:
+      - "${FORGEJO_WEB_PORT}:3000"
+      - "${FORGEJO_SSH_PORT}:22"
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsSL http://localhost:3000/api/v1/healthz || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    networks:
+      - acepanel-network
+networks:
+  acepanel-network:
+    external: true
