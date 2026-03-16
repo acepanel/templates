@@ -1,6 +1,6 @@
 services:
   meilisearch:
-    image: getmeili/meilisearch:v1.38.2
+    image: getmeili/meilisearch:v1.39.0
     restart: unless-stopped
     networks:
       - acepanel-network
