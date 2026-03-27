@@ -1,6 +1,6 @@
 services:
   nextcloud:
-    image: linuxserver/nextcloud:33.0.0
+    image: linuxserver/nextcloud:33.0.1
     restart: unless-stopped
     networks:
       - acepanel-network
