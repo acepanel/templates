@@ -1,6 +1,6 @@
 services:
   prometheus:
-    image: prom/prometheus:v3.11.0
+    image: prom/prometheus:v3.11.1
     restart: unless-stopped
     networks:
       - acepanel-network
