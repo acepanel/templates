@@ -1,6 +1,6 @@
 services:
   act_runner:
-    image: gitea/act_runner:0.4.0
+    image: gitea/act_runner:0.4.1
     restart: unless-stopped
     networks:
       - acepanel-network
