@@ -1,6 +1,6 @@
 services:
   new-api:
-    image: calciumion/new-api:v0.13.0
+    image: calciumion/new-api:v0.13.1
     restart: unless-stopped
     ports:
       - ${NEW_API_PORT_HTTP}:3000
