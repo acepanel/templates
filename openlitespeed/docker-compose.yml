@@ -1,6 +1,6 @@
 services:
   openlitespeed:
-    image: litespeedtech/openlitespeed:1.8.5-lsphp85
+    image: litespeedtech/openlitespeed:1.9.0-lsphp85
     restart: unless-stopped
     ports:
       - ${OPENLITESPEED_PORT_HTTP}:80
