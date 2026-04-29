@@ -1,6 +1,6 @@
 services:
   halo:
-    image: halohub/halo-pro:2.24.1
+    image: halohub/halo-pro:2.24.2
     restart: unless-stopped
     networks:
       - acepanel-network
