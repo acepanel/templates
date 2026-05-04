@@ -1,6 +1,6 @@
 services:
   forgejo:
-    image: codeberg.org/forgejo/forgejo:15.0.0
+    image: codeberg.org/forgejo/forgejo:15.0.1
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
