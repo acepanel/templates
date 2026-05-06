@@ -1,6 +1,6 @@
 services:
   homeassistant:
-    image: homeassistant/home-assistant:2026.4.4
+    image: homeassistant/home-assistant:2026.5.0
     restart: unless-stopped
     network_mode: "host"
     cap_add:
