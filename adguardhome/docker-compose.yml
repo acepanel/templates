@@ -1,6 +1,6 @@
 services:
   adguardhome:
-    image: adguard/adguardhome:v0.107.76
+    image: adguard/adguardhome:v0.107.77
     restart: unless-stopped
     networks:
       - acepanel-network
