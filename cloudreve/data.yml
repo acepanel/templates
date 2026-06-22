@@ -1,0 +1,37 @@
+name:
+  en: Cloudreve
+  zh_CN: Cloudreve
+  zh_TW: Cloudreve
+categories:
+  - storage
+  - tool
+description:
+  en: Self-hosted cloud storage and file sharing platform with multi-storage support
+  zh_CN: 支持多家云存储驱动的自托管网盘与文件分享系统
+  zh_TW: 支持多家雲存儲驅動的自託管網盤與文件分享系統
+website: https://cloudreve.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  CLOUDREVE_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 5212
+  CLOUDREVE_PORT_P2P:
+    description:
+      en: P2P Transfer Port (TCP/UDP)
+      zh_CN: P2P 中转端口 (TCP/UDP)
+      zh_TW: P2P 中轉埠 (TCP/UDP)
+    type: port
+    default: 6888
+  CLOUDREVE_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

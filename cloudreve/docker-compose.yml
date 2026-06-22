@@ -1,0 +1,68 @@
+services:
+  cloudreve:
+    image: cloudreve/cloudreve:4.16.1
+    restart: unless-stopped
+    depends_on:
+      cloudreve-postgresql:
+        condition: service_healthy
+      cloudreve-redis:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${CLOUDREVE_PORT_HTTP}:5212"
+      - "${CLOUDREVE_PORT_P2P}:6888"
+      - "${CLOUDREVE_PORT_P2P}:6888/udp"
+    environment:
+      - TZ=${CLOUDREVE_TIME_ZONE}
+      - CR_CONF_Database.Type=postgres
+      - CR_CONF_Database.Host=cloudreve-postgresql
+      - CR_CONF_Database.User=cloudreve
+      - CR_CONF_Database.Name=cloudreve
+      - CR_CONF_Database.Port=5432
+      - CR_CONF_Redis.Server=cloudreve-redis:6379
+    volumes:
+      - ./data/cloudreve:/cloudreve/data
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:5212 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  cloudreve-postgresql:
+    image: postgres:18.3-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    environment:
+      - TZ=${CLOUDREVE_TIME_ZONE}
+      - POSTGRES_USER=cloudreve
+      - POSTGRES_DB=cloudreve
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U cloudreve -d cloudreve" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  cloudreve-redis:
+    image: redis:8.8-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  acepanel-network:
+    external: true
