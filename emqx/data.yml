@@ -1,0 +1,66 @@
+name:
+  en: EMQX
+  zh_CN: EMQX
+  zh_TW: EMQX
+categories:
+  - message
+  - network
+  - tool
+description:
+  en: Scalable open-source MQTT broker for IoT, IIoT, and connected vehicles
+  zh_CN: 大规模可扩展的开源 MQTT 消息服务器，面向物联网、车联网与工业互联网
+  zh_TW: 大規模可擴展的開源 MQTT 訊息伺服器，面向物聯網、車聯網與工業互聯網
+website: https://www.emqx.io/
+architectures:
+  - amd64
+  - arm64
+environments:
+  EMQX_PORT_HTTP:
+    description:
+      en: Dashboard HTTP Port
+      zh_CN: 控制台 HTTP 端口
+      zh_TW: 控制台 HTTP 埠
+    type: port
+    default: 18083
+  EMQX_PORT_MQTT:
+    description:
+      en: MQTT TCP Port
+      zh_CN: MQTT TCP 端口
+      zh_TW: MQTT TCP 埠
+    type: port
+    default: 1883
+  EMQX_PORT_MQTT_TLS:
+    description:
+      en: MQTT over TLS Port
+      zh_CN: MQTT TLS 端口
+      zh_TW: MQTT TLS 埠
+    type: port
+    default: 8883
+  EMQX_PORT_WS:
+    description:
+      en: MQTT over WebSocket Port
+      zh_CN: MQTT WebSocket 端口
+      zh_TW: MQTT WebSocket 埠
+    type: port
+    default: 8083
+  EMQX_PORT_WSS:
+    description:
+      en: MQTT over Secure WebSocket Port
+      zh_CN: MQTT 加密 WebSocket 端口
+      zh_TW: MQTT 加密 WebSocket 埠
+    type: port
+    default: 8084
+  EMQX_DASHBOARD_PASSWORD:
+    description:
+      en: Dashboard default admin password (username admin)
+      zh_CN: 控制台 admin 默认密码
+      zh_TW: 控制台 admin 預設密碼
+    type: password
+    default: public
+  EMQX_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

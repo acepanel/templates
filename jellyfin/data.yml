@@ -1,0 +1,57 @@
+name:
+  en: Jellyfin
+  zh_CN: Jellyfin
+  zh_TW: Jellyfin
+categories:
+  - media
+description:
+  en: Free Software Media System for managing and streaming your personal media
+  zh_CN: 自由开源的媒体服务器，管理并流式播放个人影音库
+  zh_TW: 自由開源的媒體伺服器，管理並串流播放個人影音庫
+website: https://jellyfin.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  JELLYFIN_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8096
+  JELLYFIN_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 8920
+  JELLYFIN_PORT_DISCOVERY:
+    description:
+      en: Service Auto-Discovery Port (UDP)
+      zh_CN: 服务自动发现端口 (UDP)
+      zh_TW: 服務自動發現埠 (UDP)
+    type: port
+    default: 7359
+  JELLYFIN_PORT_DLNA:
+    description:
+      en: DLNA Port (UDP)
+      zh_CN: DLNA 端口 (UDP)
+      zh_TW: DLNA 埠 (UDP)
+    type: port
+    default: 1900
+  JELLYFIN_PUBLISHED_SERVER_URL:
+    description:
+      en: Published Server URL for client auto-discovery
+      zh_CN: 客户端自动发现使用的对外访问地址
+      zh_TW: 客戶端自動發現使用的對外訪問地址
+    type: url
+    default: http://localhost:8096
+  JELLYFIN_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

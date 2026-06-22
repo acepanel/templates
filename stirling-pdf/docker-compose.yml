@@ -1,0 +1,32 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:2.13.1
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${STIRLING_PDF_PORT_HTTP}:8080"
+    environment:
+      - TZ=${STIRLING_PDF_TIME_ZONE}
+      - DISABLE_ADDITIONAL_FEATURES=${STIRLING_PDF_DISABLE_ADDITIONAL_FEATURES}
+      - SECURITY_ENABLELOGIN=${STIRLING_PDF_SECURITY_ENABLELOGIN}
+      - SYSTEM_DEFAULTLOCALE=${STIRLING_PDF_SYSTEM_DEFAULTLOCALE}
+      - SYSTEM_MAXFILESIZE=${STIRLING_PDF_SYSTEM_MAXFILESIZE}
+      - UI_APPNAME=${STIRLING_PDF_UI_APPNAME}
+      - METRICS_ENABLED=true
+    volumes:
+      - ./data/configs:/configs
+      - ./data/tessdata:/usr/share/tessdata
+      - ./data/customFiles:/customFiles
+      - ./data/logs:/logs
+      - ./data/pipeline:/pipeline
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:8080/api/v1/info/status | grep -q 'UP' || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+networks:
+  acepanel-network:
+    external: true

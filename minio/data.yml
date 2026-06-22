@@ -1,0 +1,58 @@
+name:
+  en: MinIO
+  zh_CN: MinIO
+  zh_TW: MinIO
+categories:
+  - storage
+  - tool
+description:
+  en: High-performance S3-compatible object storage
+  zh_CN: 高性能 S3 兼容对象存储服务
+  zh_TW: 高性能 S3 相容物件儲存服務
+website: https://min.io/
+architectures:
+  - amd64
+  - arm64
+environments:
+  MINIO_PORT_HTTP:
+    description:
+      en: S3 API Port
+      zh_CN: S3 API 端口
+      zh_TW: S3 API 埠
+    type: port
+    default: 9000
+  MINIO_PORT_CONSOLE:
+    description:
+      en: Web Console Port
+      zh_CN: Web 控制台端口
+      zh_TW: Web 控制台埠
+    type: port
+    default: 9001
+  MINIO_ROOT_USER:
+    description:
+      en: Root Username
+      zh_CN: 根用户名
+      zh_TW: 根使用者名稱
+    type: text
+    default: minioadmin
+  MINIO_ROOT_PASSWORD:
+    description:
+      en: Root Password (minimum 8 characters)
+      zh_CN: 根用户密码（至少 8 位）
+      zh_TW: 根使用者密碼（至少 8 位）
+    type: password
+    default: minioadmin
+  MINIO_BROWSER_REDIRECT_URL:
+    description:
+      en: Console External URL
+      zh_CN: 控制台外部访问地址
+      zh_TW: 控制台外部訪問地址
+    type: url
+    default: http://localhost:9001
+  MINIO_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

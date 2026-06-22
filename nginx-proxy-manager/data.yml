@@ -1,0 +1,55 @@
+name:
+  en: Nginx Proxy Manager
+  zh_CN: Nginx Proxy Manager
+  zh_TW: Nginx Proxy Manager
+categories:
+  - network
+  - tool
+  - web
+description:
+  en: Docker container for managing Nginx reverse proxies with a beautiful web UI and free SSL via Let's Encrypt
+  zh_CN: 带 Web UI 的 Nginx 反向代理管理器，支持 Let's Encrypt 免费 SSL 证书一键申请
+  zh_TW: 帶 Web UI 的 Nginx 反向代理管理器，支援 Let's Encrypt 免費 SSL 憑證一鍵申請
+website: https://nginxproxymanager.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  NGINX_PROXY_MANAGER_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 80
+  NGINX_PROXY_MANAGER_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 443
+  NGINX_PROXY_MANAGER_PORT_ADMIN:
+    description:
+      en: Admin Web UI Port
+      zh_CN: 管理后台 Web UI 端口
+      zh_TW: 管理後台 Web UI 埠
+    type: port
+    default: 81
+  NGINX_PROXY_MANAGER_DISABLE_IPV6:
+    description:
+      en: Disable IPv6 in Nginx config
+      zh_CN: 在 Nginx 配置中禁用 IPv6
+      zh_TW: 在 Nginx 配置中停用 IPv6
+    type: select
+    default: "false"
+    options:
+      "False": "false"
+      "True": "true"
+  NGINX_PROXY_MANAGER_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

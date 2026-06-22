@@ -1,0 +1,82 @@
+name:
+  en: Stirling-PDF
+  zh_CN: Stirling-PDF
+  zh_TW: Stirling-PDF
+categories:
+  - tool
+  - productivity
+description:
+  en: Self-hosted web-based PDF toolkit for merging, splitting, converting, OCR and more
+  zh_CN: 自托管的 Web 端 PDF 工具集，支持合并、拆分、转换、OCR 等多种操作
+  zh_TW: 自託管的 Web 端 PDF 工具集，支援合併、拆分、轉換、OCR 等多種操作
+website: https://www.stirlingpdf.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  STIRLING_PDF_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8080
+  STIRLING_PDF_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"
+  STIRLING_PDF_SYSTEM_DEFAULTLOCALE:
+    description:
+      en: Default UI Language
+      zh_CN: 默认界面语言
+      zh_TW: 預設介面語言
+    type: select
+    default: "zh-CN"
+    options:
+      "简体中文": "zh-CN"
+      "繁體中文": "zh-TW"
+      "English (US)": "en-US"
+      "English (GB)": "en-GB"
+      "日本語": "ja-JP"
+      "한국어": "ko-KR"
+      "Français": "fr-FR"
+      "Deutsch": "de-DE"
+      "Español": "es-ES"
+      "Русский": "ru-RU"
+  STIRLING_PDF_UI_APPNAME:
+    description:
+      en: Application Display Name
+      zh_CN: 应用显示名称
+      zh_TW: 應用顯示名稱
+    type: text
+    default: "Stirling-PDF"
+  STIRLING_PDF_SYSTEM_MAXFILESIZE:
+    description:
+      en: Max Upload File Size (MB)
+      zh_CN: 单文件上传大小上限 (MB)
+      zh_TW: 單檔案上傳大小上限 (MB)
+    type: text
+    default: "100"
+  STIRLING_PDF_SECURITY_ENABLELOGIN:
+    description:
+      en: Enable Login (multi-user auth)
+      zh_CN: 启用登录鉴权（多用户）
+      zh_TW: 啟用登入鑑權（多用戶）
+    type: select
+    default: "false"
+    options:
+      "Disabled / 关闭": "false"
+      "Enabled / 开启": "true"
+  STIRLING_PDF_DISABLE_ADDITIONAL_FEATURES:
+    description:
+      en: Disable Additional Features (login/SSO/audit)
+      zh_CN: 禁用附加企业功能（登录/SSO/审计）
+      zh_TW: 停用附加企業功能（登入/SSO/稽核）
+    type: select
+    default: "true"
+    options:
+      "Disabled / 禁用": "true"
+      "Enabled / 启用": "false"

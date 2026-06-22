@@ -1,0 +1,98 @@
+services:
+  authentik-postgresql:
+    image: postgres:16.14-alpine3.23
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    environment:
+      - TZ=${AUTHENTIK_TIME_ZONE}
+      - POSTGRES_USER=${AUTHENTIK_PG_USER}
+      - POSTGRES_PASSWORD=${AUTHENTIK_PG_PASS}
+      - POSTGRES_DB=${AUTHENTIK_PG_DB}
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${AUTHENTIK_PG_USER} -d ${AUTHENTIK_PG_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  authentik-redis:
+    image: redis:8.6.4-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    command: --save 60 1 --loglevel warning
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  authentik-server:
+    image: authentik/server:2026.5.3
+    restart: unless-stopped
+    command: server
+    depends_on:
+      authentik-postgresql:
+        condition: service_healthy
+      authentik-redis:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${AUTHENTIK_PORT_HTTP}:9000"
+      - "${AUTHENTIK_PORT_HTTPS}:9443"
+    environment:
+      - TZ=${AUTHENTIK_TIME_ZONE}
+      - AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
+      - AUTHENTIK_REDIS__HOST=authentik-redis
+      - AUTHENTIK_POSTGRESQL__HOST=authentik-postgresql
+      - AUTHENTIK_POSTGRESQL__USER=${AUTHENTIK_PG_USER}
+      - AUTHENTIK_POSTGRESQL__PASSWORD=${AUTHENTIK_PG_PASS}
+      - AUTHENTIK_POSTGRESQL__NAME=${AUTHENTIK_PG_DB}
+      - AUTHENTIK_ERROR_REPORTING__ENABLED=false
+    volumes:
+      - ./data/media:/media
+      - ./data/templates:/templates
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:9000/-/health/live/ || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  authentik-worker:
+    image: authentik/server:2026.5.3
+    restart: unless-stopped
+    command: worker
+    depends_on:
+      authentik-postgresql:
+        condition: service_healthy
+      authentik-redis:
+        condition: service_healthy
+      authentik-server:
+        condition: service_started
+    networks:
+      - acepanel-network
+    environment:
+      - TZ=${AUTHENTIK_TIME_ZONE}
+      - AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
+      - AUTHENTIK_REDIS__HOST=authentik-redis
+      - AUTHENTIK_POSTGRESQL__HOST=authentik-postgresql
+      - AUTHENTIK_POSTGRESQL__USER=${AUTHENTIK_PG_USER}
+      - AUTHENTIK_POSTGRESQL__PASSWORD=${AUTHENTIK_PG_PASS}
+      - AUTHENTIK_POSTGRESQL__NAME=${AUTHENTIK_PG_DB}
+      - AUTHENTIK_ERROR_REPORTING__ENABLED=false
+    volumes:
+      - ./data/media:/media
+      - ./data/certs:/certs
+      - ./data/templates:/templates
+
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,30 @@
+name:
+  en: Memos
+  zh_CN: Memos
+  zh_TW: Memos
+categories:
+  - productivity
+  - tool
+description:
+  en: Lightweight, self-hosted note-taking and memo hub with Markdown support
+  zh_CN: 轻量级自托管的笔记与备忘录中心，支持 Markdown
+  zh_TW: 輕量級自託管的筆記與備忘錄中心，支援 Markdown
+website: https://www.usememos.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  MEMOS_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 5230
+  MEMOS_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

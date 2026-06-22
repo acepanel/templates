@@ -1,0 +1,50 @@
+services:
+  wikijs:
+    image: requarks/wiki:2.5.314
+    restart: unless-stopped
+    depends_on:
+      wikijs-postgres:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${WIKIJS_PORT_HTTP}:3000"
+    environment:
+      - TZ=${WIKIJS_TIME_ZONE}
+      - DB_TYPE=postgres
+      - DB_HOST=wikijs-postgres
+      - DB_PORT=5432
+      - DB_USER=${WIKIJS_DB_USER}
+      - DB_PASS=${WIKIJS_DB_PASSWORD}
+      - DB_NAME=${WIKIJS_DB_NAME}
+    volumes:
+      - ./data/wikijs:/wiki/data
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:3000/healthz || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  wikijs-postgres:
+    image: postgres:18.4-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    environment:
+      - TZ=${WIKIJS_TIME_ZONE}
+      - POSTGRES_USER=${WIKIJS_DB_USER}
+      - POSTGRES_PASSWORD=${WIKIJS_DB_PASSWORD}
+      - POSTGRES_DB=${WIKIJS_DB_NAME}
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${WIKIJS_DB_USER} -d ${WIKIJS_DB_NAME}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

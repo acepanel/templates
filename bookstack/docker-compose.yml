@@ -1,0 +1,56 @@
+services:
+  bookstack:
+    image: linuxserver/bookstack:26.05.1
+    restart: unless-stopped
+    depends_on:
+      bookstack-mariadb:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${BOOKSTACK_PORT_HTTP}:80"
+    environment:
+      - PUID=${BOOKSTACK_PUID}
+      - PGID=${BOOKSTACK_PGID}
+      - TZ=${BOOKSTACK_TIME_ZONE}
+      - APP_URL=${BOOKSTACK_APP_URL}
+      - APP_KEY=${BOOKSTACK_APP_KEY}
+      - DB_HOST=bookstack-mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=${BOOKSTACK_DB_DATABASE}
+      - DB_USERNAME=${BOOKSTACK_DB_USERNAME}
+      - DB_PASSWORD=${BOOKSTACK_DB_PASSWORD}
+    volumes:
+      - ./data/bookstack:/config
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:80 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  bookstack-mariadb:
+    image: linuxserver/mariadb:11.4.12
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    environment:
+      - PUID=${BOOKSTACK_PUID}
+      - PGID=${BOOKSTACK_PGID}
+      - TZ=${BOOKSTACK_TIME_ZONE}
+      - MYSQL_ROOT_PASSWORD=${BOOKSTACK_DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${BOOKSTACK_DB_DATABASE}
+      - MYSQL_USER=${BOOKSTACK_DB_USERNAME}
+      - MYSQL_PASSWORD=${BOOKSTACK_DB_PASSWORD}
+    volumes:
+      - ./data/mariadb:/config
+    healthcheck:
+      test: [ "CMD-SHELL", "mariadb-admin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,86 @@
+name:
+  en: BookStack
+  zh_CN: BookStack
+  zh_TW: BookStack
+categories:
+  - productivity
+  - tool
+description:
+  en: Self-hosted, easy-to-use platform for organising and storing documentation and knowledge
+  zh_CN: 简洁易用的自托管文档与知识库管理平台
+  zh_TW: 簡潔易用的自託管文檔與知識庫管理平台
+website: https://www.bookstackapp.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  BOOKSTACK_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 6875
+  BOOKSTACK_APP_URL:
+    description:
+      en: Application URL (must include scheme, used for generating links)
+      zh_CN: 应用访问地址（须含协议，用于生成链接）
+      zh_TW: 應用訪問地址（須含協議，用於生成連結）
+    type: url
+    default: http://localhost:6875
+  BOOKSTACK_APP_KEY:
+    description:
+      en: Application Key (32 chars, generate via `openssl rand -base64 32` then prefix with base64:)
+      zh_CN: 应用密钥（32 字符，可用 `openssl rand -base64 32` 生成后加 base64: 前缀）
+      zh_TW: 應用密鑰（32 字符，可用 `openssl rand -base64 32` 生成後加 base64: 前綴）
+    type: password
+    default: "base64:ChangeMeToA32CharRandomKeyPlease=="
+  BOOKSTACK_DB_DATABASE:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 資料庫名稱
+    type: text
+    default: bookstack
+  BOOKSTACK_DB_USERNAME:
+    description:
+      en: Database Username
+      zh_CN: 数据库用户名
+      zh_TW: 資料庫用戶名
+    type: text
+    default: bookstack
+  BOOKSTACK_DB_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: bookstack
+  BOOKSTACK_DB_ROOT_PASSWORD:
+    description:
+      en: MariaDB Root Password
+      zh_CN: MariaDB Root 密码
+      zh_TW: MariaDB Root 密碼
+    type: password
+    default: bookstackroot
+  BOOKSTACK_PUID:
+    description:
+      en: User ID for file permissions
+      zh_CN: 容器内用户 UID（用于文件权限）
+      zh_TW: 容器內用戶 UID（用於文件權限）
+    type: text
+    default: "1000"
+  BOOKSTACK_PGID:
+    description:
+      en: Group ID for file permissions
+      zh_CN: 容器内用户组 GID（用于文件权限）
+      zh_TW: 容器內用戶組 GID（用於文件權限）
+    type: text
+    default: "1000"
+  BOOKSTACK_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

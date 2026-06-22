@@ -1,0 +1,43 @@
+services:
+  searxng:
+    image: searxng/searxng:2026.6.22-952896d29
+    restart: unless-stopped
+    depends_on:
+      searxng-valkey:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${SEARXNG_PORT_HTTP}:8080"
+    environment:
+      - TZ=${SEARXNG_TIME_ZONE}
+      - SEARXNG_BASE_URL=${SEARXNG_BASE_URL}
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
+      - SEARXNG_REDIS_URL=redis://searxng-valkey:6379/0
+    volumes:
+      - ./data/searxng:/etc/searxng
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:8080/healthz || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  searxng-valkey:
+    image: valkey/valkey:8.1.8-alpine
+    restart: unless-stopped
+    command: valkey-server --save 30 1 --loglevel warning
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data/valkey:/data
+    healthcheck:
+      test: [ "CMD", "valkey-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  acepanel-network:
+    external: true

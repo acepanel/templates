@@ -1,0 +1,29 @@
+services:
+  n8n:
+    image: n8nio/n8n:2.26.9
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${N8N_PORT_HTTP}:5678"
+    environment:
+      - TZ=${N8N_TIME_ZONE}
+      - GENERIC_TIMEZONE=${N8N_TIME_ZONE}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=${N8N_PROTOCOL}
+      - WEBHOOK_URL=${N8N_WEBHOOK_URL}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - N8N_RUNNERS_ENABLED=true
+    volumes:
+      - ./data:/home/node/.n8n
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:5678/healthz || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

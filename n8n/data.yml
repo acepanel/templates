@@ -1,0 +1,62 @@
+name:
+  en: n8n
+  zh_CN: n8n
+  zh_TW: n8n
+categories:
+  - tool
+  - productivity
+  - dev
+description:
+  en: Workflow automation platform that connects apps and APIs with a visual editor
+  zh_CN: 通过可视化编辑器连接各类应用与 API 的工作流自动化平台
+  zh_TW: 透過可視化編輯器連接各類應用與 API 的工作流自動化平台
+website: https://n8n.io/
+architectures:
+  - amd64
+  - arm64
+environments:
+  N8N_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 5678
+  N8N_HOST:
+    description:
+      en: Hostname used to access n8n
+      zh_CN: 访问 n8n 使用的主机名
+      zh_TW: 訪問 n8n 使用的主機名
+    type: text
+    default: "localhost"
+  N8N_PROTOCOL:
+    description:
+      en: Protocol used to access n8n (http or https)
+      zh_CN: 访问 n8n 使用的协议 (http 或 https)
+      zh_TW: 訪問 n8n 使用的協議 (http 或 https)
+    type: select
+    default: "http"
+    options:
+      "HTTP": "http"
+      "HTTPS": "https"
+  N8N_WEBHOOK_URL:
+    description:
+      en: Public Webhook URL (required for production webhooks)
+      zh_CN: 公网 Webhook 地址 (生产环境 Webhook 必填)
+      zh_TW: 公網 Webhook 地址 (生產環境 Webhook 必填)
+    type: url
+    default: "http://localhost:5678/"
+  N8N_ENCRYPTION_KEY:
+    description:
+      en: Encryption key for stored credentials (keep it stable)
+      zh_CN: 凭据加密密钥 (请妥善保管，切勿变更)
+      zh_TW: 憑據加密密鑰 (請妥善保管，切勿變更)
+    type: password
+    default: "please-change-this-encryption-key"
+  N8N_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

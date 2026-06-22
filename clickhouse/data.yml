@@ -1,0 +1,74 @@
+name:
+  en: ClickHouse
+  zh_CN: ClickHouse
+  zh_TW: ClickHouse
+categories:
+  - database
+description:
+  en: High-performance column-oriented OLAP database for real-time analytics
+  zh_CN: 高性能列式 OLAP 数据库，专为实时数据分析而生
+  zh_TW: 高性能列式 OLAP 數據庫，專為實時數據分析而生
+website: https://clickhouse.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  CLICKHOUSE_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8123
+  CLICKHOUSE_PORT_TCP:
+    description:
+      en: Native TCP Port
+      zh_CN: 原生 TCP 端口
+      zh_TW: 原生 TCP 埠
+    type: port
+    default: 9000
+  CLICKHOUSE_PORT_REPLICATION:
+    description:
+      en: Inter-server Replication Port
+      zh_CN: 服务间复制端口
+      zh_TW: 服務間複製埠
+    type: port
+    default: 9009
+  CLICKHOUSE_USER:
+    description:
+      en: Default Username
+      zh_CN: 默认用户名
+      zh_TW: 默認用戶名
+    type: text
+    default: default
+  CLICKHOUSE_PASSWORD:
+    description:
+      en: Default User Password
+      zh_CN: 默认用户密码
+      zh_TW: 默認用戶密碼
+    type: password
+    default: ""
+  CLICKHOUSE_DB:
+    description:
+      en: Default Database Name
+      zh_CN: 默认数据库名称
+      zh_TW: 默認數據庫名稱
+    type: text
+    default: default
+  CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT:
+    description:
+      en: Enable SQL-driven Access Management for default user
+      zh_CN: 为默认用户启用 SQL 驱动的权限管理
+      zh_TW: 為默認用戶啟用 SQL 驅動的權限管理
+    type: select
+    default: "1"
+    options:
+      "Enabled": "1"
+      "Disabled": "0"
+  CLICKHOUSE_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

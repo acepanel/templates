@@ -1,0 +1,58 @@
+name:
+  en: Immich
+  zh_CN: Immich
+  zh_TW: Immich
+categories:
+  - media
+  - storage
+description:
+  en: Self-hosted photo and video management platform, an open-source Google Photos alternative
+  zh_CN: 自托管的照片与视频管理平台，开源的 Google Photos 替代方案
+  zh_TW: 自託管的照片與影片管理平台，開源的 Google Photos 替代方案
+website: https://immich.app/
+architectures:
+  - amd64
+  - arm64
+environments:
+  IMMICH_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 2283
+  IMMICH_UPLOAD_LOCATION:
+    description:
+      en: Upload Location (host path for photos and videos)
+      zh_CN: 媒体上传目录 (照片与视频在宿主机的存储路径)
+      zh_TW: 媒體上傳目錄 (照片與影片在宿主機的儲存路徑)
+    type: text
+    default: ./data/library
+  IMMICH_DB_USERNAME:
+    description:
+      en: Database Username
+      zh_CN: 数据库用户名
+      zh_TW: 資料庫用戶名
+    type: text
+    default: postgres
+  IMMICH_DB_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: postgres
+  IMMICH_DB_DATABASE_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 資料庫名稱
+    type: text
+    default: immich
+  IMMICH_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

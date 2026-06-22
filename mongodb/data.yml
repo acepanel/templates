@@ -1,0 +1,50 @@
+name:
+  en: MongoDB
+  zh_CN: MongoDB
+  zh_TW: MongoDB
+categories:
+  - database
+description:
+  en: Popular open-source NoSQL document database for modern applications
+  zh_CN: 主流开源 NoSQL 文档数据库，面向现代应用
+  zh_TW: 主流開源 NoSQL 文檔資料庫，面向現代應用
+website: https://www.mongodb.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  MONGODB_PORT_HTTP:
+    description:
+      en: Service Port
+      zh_CN: 服务端口
+      zh_TW: 服務埠
+    type: port
+    default: 27017
+  MONGODB_ROOT_USERNAME:
+    description:
+      en: Root Username
+      zh_CN: 超级用户名
+      zh_TW: 超級用戶名
+    type: text
+    default: root
+  MONGODB_ROOT_PASSWORD:
+    description:
+      en: Root Password
+      zh_CN: 超级用户密码
+      zh_TW: 超級用戶密碼
+    type: password
+    default: mongodb123
+  MONGODB_INITDB_DATABASE:
+    description:
+      en: Initial Database Name
+      zh_CN: 初始数据库名称
+      zh_TW: 初始資料庫名稱
+    type: text
+    default: admin
+  MONGODB_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

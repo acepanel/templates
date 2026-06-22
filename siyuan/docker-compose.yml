@@ -1,0 +1,24 @@
+services:
+  siyuan:
+    image: b3log/siyuan:v3.6.5
+    restart: unless-stopped
+    user: "1000:1000"
+    command: ["--workspace=/siyuan/workspace/", "--accessAuthCode=${SIYUAN_ACCESS_AUTH_CODE}"]
+    networks:
+      - acepanel-network
+    ports:
+      - "${SIYUAN_PORT_HTTP}:6806"
+    environment:
+      - TZ=${SIYUAN_TIME_ZONE}
+    volumes:
+      - ./data/workspace:/siyuan/workspace
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:6806 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

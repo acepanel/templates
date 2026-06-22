@@ -1,0 +1,85 @@
+services:
+  immich-server:
+    image: ghcr.io/immich-app/immich-server:v2.7.5
+    restart: unless-stopped
+    depends_on:
+      immich-postgres:
+        condition: service_healthy
+      immich-redis:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${IMMICH_PORT_HTTP}:2283"
+    environment:
+      - TZ=${IMMICH_TIME_ZONE}
+      - DB_HOSTNAME=immich-postgres
+      - DB_PORT=5432
+      - DB_USERNAME=${IMMICH_DB_USERNAME}
+      - DB_PASSWORD=${IMMICH_DB_PASSWORD}
+      - DB_DATABASE_NAME=${IMMICH_DB_DATABASE_NAME}
+      - REDIS_HOSTNAME=immich-redis
+      - REDIS_PORT=6379
+    volumes:
+      - ${IMMICH_UPLOAD_LOCATION}:/data
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:2283/api/server/ping || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  immich-machine-learning:
+    image: ghcr.io/immich-app/immich-machine-learning:v2.7.5
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    environment:
+      - TZ=${IMMICH_TIME_ZONE}
+    volumes:
+      - ./data/model-cache:/cache
+    healthcheck:
+      test: [ "CMD-SHELL", "python3 -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:3003/ping').status==200 else 1)\" || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  immich-postgres:
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    environment:
+      - TZ=${IMMICH_TIME_ZONE}
+      - POSTGRES_USER=${IMMICH_DB_USERNAME}
+      - POSTGRES_PASSWORD=${IMMICH_DB_PASSWORD}
+      - POSTGRES_DB=${IMMICH_DB_DATABASE_NAME}
+      - POSTGRES_INITDB_ARGS=--data-checksums
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    shm_size: 128mb
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${IMMICH_DB_USERNAME} -d ${IMMICH_DB_DATABASE_NAME}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  immich-redis:
+    image: redis:6.2.22-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  acepanel-network:
+    external: true

@@ -1,0 +1,45 @@
+name:
+  en: SearXNG
+  zh_CN: SearXNG
+  zh_TW: SearXNG
+categories:
+  - search
+  - tool
+  - productivity
+description:
+  en: Privacy-respecting, hackable metasearch engine aggregating results from multiple sources
+  zh_CN: 注重隐私的可定制元搜索引擎，聚合多家搜索引擎结果
+  zh_TW: 注重隱私的可定制元搜索引擎，聚合多家搜索引擎結果
+website: https://docs.searxng.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  SEARXNG_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8080
+  SEARXNG_BASE_URL:
+    description:
+      en: External Base URL (must end with /)
+      zh_CN: 外部访问基础地址（必须以 / 结尾）
+      zh_TW: 外部訪問基礎地址（必須以 / 結尾）
+    type: url
+    default: http://localhost:8080/
+  SEARXNG_SECRET:
+    description:
+      en: Secret Key (32-byte hex, generate with: openssl rand -hex 32)
+      zh_CN: 密钥（32 字节 hex，生成命令：openssl rand -hex 32）
+      zh_TW: 密鑰（32 位元組 hex，生成命令：openssl rand -hex 32）
+    type: password
+    default: "please-change-me-to-a-random-32-byte-hex-string"
+  SEARXNG_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

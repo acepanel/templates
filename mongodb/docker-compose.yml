@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    image: mongo:8.0.26
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${MONGODB_PORT_HTTP}:27017"
+    environment:
+      - TZ=${MONGODB_TIME_ZONE}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGODB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGODB_INITDB_DATABASE}
+    volumes:
+      - ./data/db:/data/db
+      - ./data/configdb:/data/configdb
+    healthcheck:
+      test: [ "CMD-SHELL", "mongosh --quiet --eval \"db.adminCommand('ping').ok\" | grep -q 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+networks:
+  acepanel-network:
+    external: true

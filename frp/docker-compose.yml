@@ -1,0 +1,24 @@
+services:
+  frps:
+    image: snowdreamtech/frps:0.69.1-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${FRP_PORT_BIND}:7000"
+      - "${FRP_PORT_BIND}:7000/udp"
+      - "${FRP_PORT_DASHBOARD}:7500"
+    environment:
+      - TZ=${FRP_TIME_ZONE}
+    volumes:
+      - ./conf/frps.toml:/etc/frp/frps.toml
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 7000 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

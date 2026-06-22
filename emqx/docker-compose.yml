@@ -1,0 +1,28 @@
+services:
+  emqx:
+    image: emqx/emqx:6.0.3
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${EMQX_PORT_MQTT}:1883"
+      - "${EMQX_PORT_MQTT_TLS}:8883"
+      - "${EMQX_PORT_WS}:8083"
+      - "${EMQX_PORT_WSS}:8084"
+      - "${EMQX_PORT_HTTP}:18083"
+    environment:
+      - TZ=${EMQX_TIME_ZONE}
+      - EMQX_DASHBOARD__DEFAULT_PASSWORD=${EMQX_DASHBOARD_PASSWORD}
+    volumes:
+      - ./data/data:/opt/emqx/data
+      - ./data/log:/opt/emqx/log
+    healthcheck:
+      test: [ "CMD", "/opt/emqx/bin/emqx_ctl", "status" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+networks:
+  acepanel-network:
+    external: true

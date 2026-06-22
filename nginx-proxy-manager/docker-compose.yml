@@ -1,0 +1,26 @@
+services:
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:2.15.1
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${NGINX_PROXY_MANAGER_PORT_HTTP}:80"
+      - "${NGINX_PROXY_MANAGER_PORT_HTTPS}:443"
+      - "${NGINX_PROXY_MANAGER_PORT_ADMIN}:81"
+    environment:
+      - TZ=${NGINX_PROXY_MANAGER_TIME_ZONE}
+      - DISABLE_IPV6=${NGINX_PROXY_MANAGER_DISABLE_IPV6}
+    volumes:
+      - ./data/app:/data
+      - ./data/letsencrypt:/etc/letsencrypt
+    healthcheck:
+      test: [ "CMD-SHELL", "/usr/bin/check-health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

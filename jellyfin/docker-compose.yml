@@ -1,0 +1,28 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:10.11.11
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${JELLYFIN_PORT_HTTP}:8096"
+      - "${JELLYFIN_PORT_HTTPS}:8920"
+      - "${JELLYFIN_PORT_DISCOVERY}:7359/udp"
+      - "${JELLYFIN_PORT_DLNA}:1900/udp"
+    environment:
+      - TZ=${JELLYFIN_TIME_ZONE}
+      - JELLYFIN_PublishedServerUrl=${JELLYFIN_PUBLISHED_SERVER_URL}
+    volumes:
+      - ./data/config:/config
+      - ./data/cache:/cache
+      - ./data/media:/media
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:8096/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+networks:
+  acepanel-network:
+    external: true

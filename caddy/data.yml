@@ -1,0 +1,37 @@
+name:
+  en: Caddy
+  zh_CN: Caddy
+  zh_TW: Caddy
+categories:
+  - web
+  - network
+description:
+  en: Modern web server and reverse proxy with automatic HTTPS
+  zh_CN: 自动 HTTPS 的现代 Web 服务器与反向代理
+  zh_TW: 自動 HTTPS 的現代 Web 伺服器與反向代理
+website: https://caddyserver.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  CADDY_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 80
+  CADDY_PORT_HTTPS:
+    description:
+      en: HTTPS Port (TCP/UDP for HTTP/3)
+      zh_CN: HTTPS 端口 (TCP/UDP 用于 HTTP/3)
+      zh_TW: HTTPS 埠 (TCP/UDP 用於 HTTP/3)
+    type: port
+    default: 443
+  CADDY_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

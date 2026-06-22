@@ -1,0 +1,44 @@
+name:
+  en: frp
+  zh_CN: frp
+  zh_TW: frp
+categories:
+  - network
+  - tool
+description:
+  en: High-performance reverse proxy for exposing local services behind NAT to the internet
+  zh_CN: 高性能内网穿透工具，将位于 NAT 后的本地服务暴露至公网
+  zh_TW: 高效能內網穿透工具，將位於 NAT 後的本地服務暴露至公網
+website: https://gofrp.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  FRP_PORT_BIND:
+    description:
+      en: Bind Port (TCP/UDP for KCP/QUIC)
+      zh_CN: 服务端绑定端口 (TCP/UDP 用于 KCP/QUIC)
+      zh_TW: 伺服端綁定埠 (TCP/UDP 用於 KCP/QUIC)
+    type: port
+    default: 7000
+  FRP_PORT_DASHBOARD:
+    description:
+      en: Dashboard Port
+      zh_CN: Dashboard 管理端口
+      zh_TW: Dashboard 管理埠
+    type: port
+    default: 7500
+  FRP_PORT_HTTP:
+    description:
+      en: Dashboard HTTP Port (alias of dashboard port)
+      zh_CN: Dashboard HTTP 端口 (同 Dashboard 端口)
+      zh_TW: Dashboard HTTP 埠 (同 Dashboard 埠)
+    type: port
+    default: 7500
+  FRP_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

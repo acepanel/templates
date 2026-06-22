@@ -1,0 +1,65 @@
+name:
+  en: Authentik
+  zh_CN: Authentik
+  zh_TW: Authentik
+categories:
+  - security
+  - tool
+description:
+  en: Open-source identity provider for SSO, OAuth, OIDC, SAML and more
+  zh_CN: 开源身份提供者，支持 SSO、OAuth、OIDC、SAML 等协议
+  zh_TW: 開源身份提供者，支援 SSO、OAuth、OIDC、SAML 等協議
+website: https://goauthentik.io/
+architectures:
+  - amd64
+  - arm64
+environments:
+  AUTHENTIK_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 9000
+  AUTHENTIK_PORT_HTTPS:
+    description:
+      en: HTTPS Port
+      zh_CN: HTTPS 端口
+      zh_TW: HTTPS 埠
+    type: port
+    default: 9443
+  AUTHENTIK_SECRET_KEY:
+    description:
+      en: Secret Key (generate via openssl rand -hex 32)
+      zh_CN: 应用密钥（使用 openssl rand -hex 32 生成）
+      zh_TW: 應用密鑰（使用 openssl rand -hex 32 生成）
+    type: password
+    default: "PleaseGenerateWithOpensslRandHex32CharsLongSecret"
+  AUTHENTIK_PG_USER:
+    description:
+      en: PostgreSQL Username
+      zh_CN: PostgreSQL 用户名
+      zh_TW: PostgreSQL 使用者名稱
+    type: text
+    default: authentik
+  AUTHENTIK_PG_PASS:
+    description:
+      en: PostgreSQL Password
+      zh_CN: PostgreSQL 密码
+      zh_TW: PostgreSQL 密碼
+    type: password
+    default: authentik
+  AUTHENTIK_PG_DB:
+    description:
+      en: PostgreSQL Database Name
+      zh_CN: PostgreSQL 数据库名
+      zh_TW: PostgreSQL 資料庫名稱
+    type: text
+    default: authentik
+  AUTHENTIK_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

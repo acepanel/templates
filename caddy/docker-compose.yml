@@ -1,0 +1,26 @@
+services:
+  caddy:
+    image: caddy:2.11.4-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${CADDY_PORT_HTTP}:80"
+      - "${CADDY_PORT_HTTPS}:443"
+      - "${CADDY_PORT_HTTPS}:443/udp"
+    environment:
+      - TZ=${CADDY_TIME_ZONE}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./data/caddy:/data
+      - ./data/config:/config
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:80 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

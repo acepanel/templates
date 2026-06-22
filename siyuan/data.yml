@@ -1,0 +1,37 @@
+name:
+  en: SiYuan
+  zh_CN: 思源笔记
+  zh_TW: 思源筆記
+categories:
+  - productivity
+  - tool
+description:
+  en: Local-first, self-hosted, open-source block-structured note-taking app
+  zh_CN: 本地优先的开源块状结构个人知识管理与笔记软件
+  zh_TW: 本地優先的開源塊狀結構個人知識管理與筆記軟體
+website: https://b3log.org/siyuan/
+architectures:
+  - amd64
+  - arm64
+environments:
+  SIYUAN_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 6806
+  SIYUAN_ACCESS_AUTH_CODE:
+    description:
+      en: Access Auth Code (password to open the workspace)
+      zh_CN: 访问授权码 (打开工作空间所需密码)
+      zh_TW: 訪問授權碼 (打開工作空間所需密碼)
+    type: password
+    default: "siyuan"
+  SIYUAN_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

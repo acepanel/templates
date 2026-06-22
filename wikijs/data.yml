@@ -1,0 +1,51 @@
+name:
+  en: Wiki.js
+  zh_CN: Wiki.js
+  zh_TW: Wiki.js
+categories:
+  - productivity
+  - tool
+description:
+  en: Modern and powerful open source wiki platform built on Node.js
+  zh_CN: 基于 Node.js 构建的现代化强大开源 Wiki 知识库平台
+  zh_TW: 基於 Node.js 構建的現代化強大開源 Wiki 知識庫平台
+website: https://js.wiki/
+architectures:
+  - amd64
+  - arm64
+environments:
+  WIKIJS_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 3000
+  WIKIJS_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 資料庫名稱
+    type: text
+    default: wiki
+  WIKIJS_DB_USER:
+    description:
+      en: Database Username
+      zh_CN: 数据库用户名
+      zh_TW: 資料庫用戶名
+    type: text
+    default: wikijs
+  WIKIJS_DB_PASSWORD:
+    description:
+      en: Database Password
+      zh_CN: 数据库密码
+      zh_TW: 資料庫密碼
+    type: password
+    default: wikijsPass123
+  WIKIJS_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"

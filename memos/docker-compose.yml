@@ -1,0 +1,22 @@
+services:
+  memos:
+    image: neosmemo/memos:0.29.1
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    ports:
+      - "${MEMOS_PORT_HTTP}:5230"
+    environment:
+      - TZ=${MEMOS_TIME_ZONE}
+    volumes:
+      - ./data:/var/opt/memos
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:5230/healthz || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  acepanel-network:
+    external: true

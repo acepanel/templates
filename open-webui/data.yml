@@ -1,0 +1,68 @@
+name:
+  en: Open WebUI
+  zh_CN: Open WebUI
+  zh_TW: Open WebUI
+categories:
+  - ai
+  - tool
+description:
+  en: Self-hosted offline AI chat UI compatible with Ollama and OpenAI APIs
+  zh_CN: 兼容 Ollama 与 OpenAI 接口的自托管离线大模型聊天界面
+  zh_TW: 相容 Ollama 與 OpenAI 介面的自託管離線大模型聊天介面
+website: https://openwebui.com/
+architectures:
+  - amd64
+  - arm64
+environments:
+  OPEN_WEBUI_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8080
+  OPEN_WEBUI_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"
+  OPEN_WEBUI_OLLAMA_BASE_URL:
+    description:
+      en: Ollama Base URL (use host.docker.internal for host Ollama)
+      zh_CN: Ollama 服务地址（对接宿主机 Ollama 使用 host.docker.internal）
+      zh_TW: Ollama 服務地址（對接宿主機 Ollama 使用 host.docker.internal）
+    type: url
+    default: "http://host.docker.internal:11434"
+  OPEN_WEBUI_OPENAI_API_BASE_URL:
+    description:
+      en: OpenAI Compatible API Base URL
+      zh_CN: OpenAI 兼容接口地址
+      zh_TW: OpenAI 相容介面地址
+    type: url
+    default: "https://api.openai.com/v1"
+  OPEN_WEBUI_OPENAI_API_KEY:
+    description:
+      en: OpenAI API Key
+      zh_CN: OpenAI API 密钥
+      zh_TW: OpenAI API 密鑰
+    type: password
+    default: ""
+  OPEN_WEBUI_SECRET_KEY:
+    description:
+      en: WebUI Secret Key (for session/JWT signing)
+      zh_CN: WebUI 密钥（用于会话/JWT 签名）
+      zh_TW: WebUI 密鑰（用於工作階段/JWT 簽章）
+    type: password
+    default: "change-me-to-a-random-string"
+  OPEN_WEBUI_AUTH:
+    description:
+      en: Enable Authentication
+      zh_CN: 启用身份认证
+      zh_TW: 啟用身份驗證
+    type: select
+    default: "True"
+    options:
+      "Enabled": "True"
+      "Disabled": "False"
