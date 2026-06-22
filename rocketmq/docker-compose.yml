@@ -1,6 +1,6 @@
 services:
   namesrv:
-    image: apache/rocketmq:5.4.0
+    image: apache/rocketmq:5.5.0
     ports:
       - ${ROCKETMQ_PORT_NAMESERVER}:9876
     networks:
@@ -15,7 +15,7 @@ services:
       retries: 5
       start_period: 30s
   broker:
-    image: apache/rocketmq:5.4.0
+    image: apache/rocketmq:5.5.0
     links:
       - namesrv
     ports:
@@ -38,7 +38,7 @@ services:
       retries: 5
       start_period: 60s
   proxy:
-    image: apache/rocketmq:5.4.0
+    image: apache/rocketmq:5.5.0
     links:
       - namesrv
       - broker
