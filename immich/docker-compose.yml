@@ -67,7 +67,7 @@ services:
       start_period: 30s
 
   immich-redis:
-    image: redis:6.2.22-alpine
+    image: redis:8.8.0-alpine
     restart: unless-stopped
     networks:
       - acepanel-network
