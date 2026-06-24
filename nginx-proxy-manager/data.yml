@@ -3,9 +3,8 @@ name:
   zh_CN: Nginx Proxy Manager
   zh_TW: Nginx Proxy Manager
 categories:
-  - network
+  - webserver
   - tool
-  - web
 description:
   en: Docker container for managing Nginx reverse proxies with a beautiful web UI and free SSL via Let's Encrypt
   zh_CN: 带 Web UI 的 Nginx 反向代理管理器，支持 Let's Encrypt 免费 SSL 证书一键申请

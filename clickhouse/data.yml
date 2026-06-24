@@ -3,6 +3,7 @@ name:
   zh_CN: ClickHouse
   zh_TW: ClickHouse
 categories:
+  - middleware
   - database
 description:
   en: High-performance column-oriented OLAP database for real-time analytics

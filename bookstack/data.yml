@@ -3,7 +3,7 @@ name:
   zh_CN: BookStack
   zh_TW: BookStack
 categories:
-  - productivity
+  - dev
   - tool
 description:
   en: Self-hosted, easy-to-use platform for organising and storing documentation and knowledge
@@ -30,9 +30,9 @@ environments:
     default: http://localhost:6875
   BOOKSTACK_APP_KEY:
     description:
-      en: Application Key (32 chars, generate via `openssl rand -base64 32` then prefix with base64:)
-      zh_CN: 应用密钥（32 字符，可用 `openssl rand -base64 32` 生成后加 base64: 前缀）
-      zh_TW: 應用密鑰（32 字符，可用 `openssl rand -base64 32` 生成後加 base64: 前綴）
+      en: Application Key (32 chars, with base64 prefix; openssl rand -base64 32)
+      zh_CN: 应用密钥（32 字符，含 base64 前缀；openssl rand -base64 32 生成）
+      zh_TW: 應用密鑰（32 字符，含 base64 前綴；openssl rand -base64 32 生成）
     type: password
     default: "base64:ChangeMeToA32CharRandomKeyPlease=="
   BOOKSTACK_DB_DATABASE:

@@ -3,7 +3,6 @@ name:
   zh_CN: 思源笔记
   zh_TW: 思源筆記
 categories:
-  - productivity
   - tool
 description:
   en: Local-first, self-hosted, open-source block-structured note-taking app

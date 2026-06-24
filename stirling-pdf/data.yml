@@ -4,7 +4,6 @@ name:
   zh_TW: Stirling-PDF
 categories:
   - tool
-  - productivity
 description:
   en: Self-hosted web-based PDF toolkit for merging, splitting, converting, OCR and more
   zh_CN: 自托管的 Web 端 PDF 工具集，支持合并、拆分、转换、OCR 等多种操作

@@ -3,8 +3,8 @@ name:
   zh_CN: Immich
   zh_TW: Immich
 categories:
-  - media
   - storage
+  - tool
 description:
   en: Self-hosted photo and video management platform, an open-source Google Photos alternative
   zh_CN: 自托管的照片与视频管理平台，开源的 Google Photos 替代方案

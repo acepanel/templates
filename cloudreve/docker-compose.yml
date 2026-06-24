@@ -41,7 +41,7 @@ services:
       - POSTGRES_DB=cloudreve
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/data
+      - ./data/postgresql:/var/lib/postgresql
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U cloudreve -d cloudreve" ]
       interval: 10s

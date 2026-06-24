@@ -3,8 +3,7 @@ name:
   zh_CN: Caddy
   zh_TW: Caddy
 categories:
-  - web
-  - network
+  - webserver
 description:
   en: Modern web server and reverse proxy with automatic HTTPS
   zh_CN: 自动 HTTPS 的现代 Web 服务器与反向代理

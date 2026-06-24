@@ -3,9 +3,7 @@ name:
   zh_CN: SearXNG
   zh_TW: SearXNG
 categories:
-  - search
   - tool
-  - productivity
 description:
   en: Privacy-respecting, hackable metasearch engine aggregating results from multiple sources
   zh_CN: 注重隐私的可定制元搜索引擎，聚合多家搜索引擎结果
@@ -31,9 +29,9 @@ environments:
     default: http://localhost:8080/
   SEARXNG_SECRET:
     description:
-      en: Secret Key (32-byte hex, generate with: openssl rand -hex 32)
-      zh_CN: 密钥（32 字节 hex，生成命令：openssl rand -hex 32）
-      zh_TW: 密鑰（32 位元組 hex，生成命令：openssl rand -hex 32）
+      en: Secret Key (32-byte hex; openssl rand -hex 32)
+      zh_CN: 密钥（32 字节 hex，使用 openssl rand -hex 32 生成）
+      zh_TW: 密鑰（32 位元組 hex，使用 openssl rand -hex 32 生成）
     type: password
     default: "please-change-me-to-a-random-32-byte-hex-string"
   SEARXNG_TIME_ZONE:

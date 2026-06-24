@@ -3,8 +3,8 @@ name:
   zh_CN: MinIO
   zh_TW: MinIO
 categories:
+  - middleware
   - storage
-  - tool
 description:
   en: High-performance S3-compatible object storage
   zh_CN: 高性能 S3 兼容对象存储服务

@@ -4,8 +4,7 @@ name:
   zh_TW: n8n
 categories:
   - tool
-  - productivity
-  - dev
+  - devops
 description:
   en: Workflow automation platform that connects apps and APIs with a visual editor
   zh_CN: 通过可视化编辑器连接各类应用与 API 的工作流自动化平台

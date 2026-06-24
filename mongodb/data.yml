@@ -4,6 +4,7 @@ name:
   zh_TW: MongoDB
 categories:
   - database
+  - middleware
 description:
   en: Popular open-source NoSQL document database for modern applications
   zh_CN: 主流开源 NoSQL 文档数据库，面向现代应用

@@ -3,7 +3,8 @@ name:
   zh_CN: Jellyfin
   zh_TW: Jellyfin
 categories:
-  - media
+  - storage
+  - tool
 description:
   en: Free Software Media System for managing and streaming your personal media
   zh_CN: 自由开源的媒体服务器，管理并流式播放个人影音库

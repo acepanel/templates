@@ -3,8 +3,8 @@ name:
   zh_CN: frp
   zh_TW: frp
 categories:
-  - network
   - tool
+  - devops
 description:
   en: High-performance reverse proxy for exposing local services behind NAT to the internet
   zh_CN: 高性能内网穿透工具，将位于 NAT 后的本地服务暴露至公网

@@ -3,7 +3,6 @@ name:
   zh_CN: Memos
   zh_TW: Memos
 categories:
-  - productivity
   - tool
 description:
   en: Lightweight, self-hosted note-taking and memo hub with Markdown support

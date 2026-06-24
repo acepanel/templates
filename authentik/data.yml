@@ -3,8 +3,8 @@ name:
   zh_CN: Authentik
   zh_TW: Authentik
 categories:
-  - security
   - tool
+  - safe
 description:
   en: Open-source identity provider for SSO, OAuth, OIDC, SAML and more
   zh_CN: 开源身份提供者，支持 SSO、OAuth、OIDC、SAML 等协议
