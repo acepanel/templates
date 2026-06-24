@@ -31,7 +31,7 @@ services:
       start_period: 30s
 
   cloudreve-postgresql:
-    image: postgres:18.3-alpine
+    image: postgres:18.4-alpine
     restart: unless-stopped
     networks:
       - acepanel-network

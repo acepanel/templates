@@ -1,6 +1,6 @@
 services:
   bookstack:
-    image: linuxserver/bookstack:26.05.1
+    image: linuxserver/bookstack:26.05.20260608
     restart: unless-stopped
     depends_on:
       bookstack-mariadb:
