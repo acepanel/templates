@@ -1,6 +1,6 @@
 services:
   emqx:
-    image: emqx/emqx:6.0.3
+    image: emqx/emqx:6.2.1
     restart: unless-stopped
     networks:
       - acepanel-network
