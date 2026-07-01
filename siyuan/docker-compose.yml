@@ -1,6 +1,6 @@
 services:
   siyuan:
-    image: b3log/siyuan:v3.6.5
+    image: b3log/siyuan:v3.7.0
     restart: unless-stopped
     user: "1000:1000"
     command: ["--workspace=/siyuan/workspace/", "--accessAuthCode=${SIYUAN_ACCESS_AUTH_CODE}"]
