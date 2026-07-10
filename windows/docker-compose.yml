@@ -1,6 +1,6 @@
 services:
   windows:
-    image: dockurr/windows:5.16
+    image: dockurr/windows:6.00
     environment:
       VERSION: ${WINDOWS_VERSION}
       RAM_SIZE: ${WINDOWS_RAM_SIZE}
