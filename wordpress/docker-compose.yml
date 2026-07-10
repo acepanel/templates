@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:7.0.0-php8.5
+    image: wordpress:7.0.1-php8.5
     restart: unless-stopped
     networks:
       - acepanel-network
