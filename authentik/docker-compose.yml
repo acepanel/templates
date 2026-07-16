@@ -34,7 +34,7 @@ services:
       start_period: 10s
 
   authentik-server:
-    image: authentik/server:2026.5.4
+    image: authentik/server:2026.5.5
     restart: unless-stopped
     command: server
     depends_on:
@@ -67,7 +67,7 @@ services:
       start_period: 60s
 
   authentik-worker:
-    image: authentik/server:2026.5.4
+    image: authentik/server:2026.5.5
     restart: unless-stopped
     command: worker
     depends_on:

@@ -1,6 +1,6 @@
 services:
   frps:
-    image: snowdreamtech/frps:0.69.1-alpine
+    image: snowdreamtech/frps:0.70.0-alpine
     restart: unless-stopped
     networks:
       - acepanel-network

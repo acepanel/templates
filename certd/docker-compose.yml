@@ -1,6 +1,6 @@
 services:
   certd:
-    image: greper/certd:1.42.3
+    image: greper/certd:1.42.5
     restart: unless-stopped
     networks:
       - acepanel-network

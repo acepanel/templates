@@ -1,6 +1,6 @@
 services:
   certimate:
-    image: certimate/certimate:v0.4.26
+    image: certimate/certimate:v0.4.27
     networks:
       - acepanel-network
     ports:
