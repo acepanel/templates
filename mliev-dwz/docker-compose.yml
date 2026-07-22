@@ -1,6 +1,6 @@
 services:
   dwz-server:
-    image: docker.cnb.cool/mliev/open/dwz-server:v2.22.4
+    image: docker.cnb.cool/mliev/open/dwz-server:v2.23.0
     restart: unless-stopped
     networks:
       - acepanel-network
