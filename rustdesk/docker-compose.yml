@@ -1,6 +1,6 @@
 services:
   rustdesk-server:
-    image: rustdesk/rustdesk-server-s6:1.1.15
+    image: rustdesk/rustdesk-server-s6:1.1.16
     restart: unless-stopped
     networks:
       - acepanel-network
