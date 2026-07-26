@@ -19,7 +19,7 @@ services:
       start_period: 30s
 
   authentik-redis:
-    image: redis:8.8.0-alpine
+    image: redis:8.8.1-alpine
     restart: unless-stopped
     networks:
       - acepanel-network
