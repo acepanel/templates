@@ -1,6 +1,6 @@
 services:
   open-webui:
-    image: openwebui/open-webui:0.10.2
+    image: openwebui/open-webui:0.11.0
     restart: unless-stopped
     networks:
       - acepanel-network
