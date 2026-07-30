@@ -1,6 +1,6 @@
 services:
   memos:
-    image: neosmemo/memos:0.29.1
+    image: neosmemo/memos:0.30.0
     restart: unless-stopped
     networks:
       - acepanel-network
