@@ -1,0 +1,90 @@
+services:
+  discourse-postgres:
+    image: discourse/postgres:pg18
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    shm_size: 512mb
+    environment:
+      - TZ=${DISCOURSE_TIME_ZONE}
+      - POSTGRES_DB=${DISCOURSE_DB_NAME}
+      - DB_USER=${DISCOURSE_DB_USERNAME}
+      - DB_PASSWORD=${DISCOURSE_DB_PASSWORD}
+    volumes:
+      - ./data/postgres:/var/lib/postgresql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d ${DISCOURSE_DB_NAME}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  discourse-redis:
+    image: redis:8.10.0-alpine
+    restart: unless-stopped
+    networks:
+      - acepanel-network
+    command: --save 60 1 --loglevel warning
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  discourse:
+    image: discourse/discourse:2026.7.1
+    restart: unless-stopped
+    depends_on:
+      discourse-postgres:
+        condition: service_healthy
+      discourse-redis:
+        condition: service_healthy
+    networks:
+      - acepanel-network
+    ports:
+      - "${DISCOURSE_PORT_HTTP}:80"
+    shm_size: 512mb
+    environment:
+      - TZ=${DISCOURSE_TIME_ZONE}
+      - LANG=en_US.UTF-8
+      - LC_ALL=en_US.UTF-8
+      - LANGUAGE=en_US.UTF-8
+      - UNICORN_WORKERS=${DISCOURSE_UNICORN_WORKERS}
+      - UNICORN_SIDEKIQS=${DISCOURSE_UNICORN_SIDEKIQS}
+      - UNICORN_SIDEKIQ_MAX_RSS=${DISCOURSE_SIDEKIQ_MAX_RSS}
+      - DISCOURSE_SIDEKIQ_WORKERS=${DISCOURSE_SIDEKIQ_WORKERS}
+      - DISCOURSE_CDN_URL=${DISCOURSE_CDN_URL}
+      - DISCOURSE_MAXMIND_ACCOUNT_ID=${DISCOURSE_MAXMIND_ACCOUNT_ID}
+      - DISCOURSE_MAXMIND_LICENSE_KEY=${DISCOURSE_MAXMIND_LICENSE_KEY}
+      - DISCOURSE_HOSTNAME=${DISCOURSE_HOSTNAME}
+      - DISCOURSE_DEVELOPER_EMAILS=${DISCOURSE_DEVELOPER_EMAILS}
+      - DISCOURSE_DEFAULT_LOCALE=${DISCOURSE_DEFAULT_LOCALE}
+      - DISCOURSE_DB_SOCKET=
+      - DISCOURSE_DB_HOST=discourse-postgres
+      - DISCOURSE_DB_PORT=5432
+      - DISCOURSE_DB_NAME=${DISCOURSE_DB_NAME}
+      - DISCOURSE_DB_USERNAME=${DISCOURSE_DB_USERNAME}
+      - DISCOURSE_DB_PASSWORD=${DISCOURSE_DB_PASSWORD}
+      - DISCOURSE_REDIS_HOST=discourse-redis
+      - DISCOURSE_REDIS_PORT=6379
+      - DISCOURSE_SMTP_ADDRESS=${DISCOURSE_SMTP_ADDRESS}
+      - DISCOURSE_SMTP_PORT=${DISCOURSE_SMTP_PORT}
+      - DISCOURSE_SMTP_USER_NAME=${DISCOURSE_SMTP_USER_NAME}
+      - DISCOURSE_SMTP_PASSWORD=${DISCOURSE_SMTP_PASSWORD}
+      - DISCOURSE_SMTP_FORCE_TLS=${DISCOURSE_SMTP_FORCE_TLS}
+      - DISCOURSE_NOTIFICATION_EMAIL=${DISCOURSE_NOTIFICATION_EMAIL}
+    volumes:
+      - ./data/shared:/shared
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -fsSL http://localhost:80/srv/status || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 300s
+
+networks:
+  acepanel-network:
+    external: true

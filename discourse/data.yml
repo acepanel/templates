@@ -1,0 +1,170 @@
+name:
+  en: Discourse
+  zh_CN: Discourse
+  zh_TW: Discourse
+categories:
+  - tool
+  - dev
+description:
+  en: Modern open source discussion platform for communities and forums
+  zh_CN: 面向社区的现代化开源论坛与讨论平台
+  zh_TW: 面向社群的現代化開源論壇與討論平台
+website: https://www.discourse.org/
+architectures:
+  - amd64
+  - arm64
+environments:
+  DISCOURSE_PORT_HTTP:
+    description:
+      en: HTTP Port
+      zh_CN: HTTP 端口
+      zh_TW: HTTP 埠
+    type: port
+    default: 8088
+  DISCOURSE_HOSTNAME:
+    description:
+      en: Site domain, must match the domain used to visit
+      zh_CN: 站点域名，须与实际访问域名一致
+      zh_TW: 站點域名，須與實際訪問域名一致
+    type: text
+    default: discourse.example.com
+  DISCOURSE_DEVELOPER_EMAILS:
+    description:
+      en: Admin emails, comma separated, register with them to become admin
+      zh_CN: 管理员邮箱，多个用逗号分隔，用该邮箱注册即为管理员
+      zh_TW: 管理員信箱，多個用逗號分隔，用該信箱註冊即為管理員
+    type: text
+    default: admin@example.com
+  DISCOURSE_DEFAULT_LOCALE:
+    description:
+      en: Default Language
+      zh_CN: 默认语言
+      zh_TW: 預設語言
+    type: select
+    default: "zh_CN"
+    options:
+      "English": "en"
+      "简体中文": "zh_CN"
+      "繁體中文": "zh_TW"
+  DISCOURSE_SMTP_ADDRESS:
+    description:
+      en: SMTP host, users cannot register until configured
+      zh_CN: SMTP 服务器地址，未配置则用户无法注册
+      zh_TW: SMTP 伺服器地址，未配置則使用者無法註冊
+    type: text
+    default: smtp.example.com
+  DISCOURSE_SMTP_PORT:
+    description:
+      en: SMTP Port
+      zh_CN: SMTP 端口
+      zh_TW: SMTP 埠
+    type: port
+    default: 587
+  DISCOURSE_SMTP_USER_NAME:
+    description:
+      en: SMTP Username
+      zh_CN: SMTP 用户名
+      zh_TW: SMTP 使用者名稱
+    type: text
+    default: admin@example.com
+  DISCOURSE_SMTP_PASSWORD:
+    description:
+      en: SMTP Password
+      zh_CN: SMTP 密码
+      zh_TW: SMTP 密碼
+    type: password
+    default: ""
+  DISCOURSE_SMTP_FORCE_TLS:
+    description:
+      en: Force implicit TLS, set true for port 465
+      zh_CN: 强制隐式 TLS，465 端口需设为 true
+      zh_TW: 強制隱式 TLS，465 埠需設為 true
+    type: select
+    default: "false"
+    options:
+      "false": "false"
+      "true": "true"
+  DISCOURSE_NOTIFICATION_EMAIL:
+    description:
+      en: Sender address, must be allowed by your SMTP provider
+      zh_CN: 发件人地址，须为 SMTP 服务商允许的发信地址
+      zh_TW: 寄件人地址，須為 SMTP 服務商允許的寄信地址
+    type: text
+    default: noreply@example.com
+  DISCOURSE_DB_NAME:
+    description:
+      en: Database Name
+      zh_CN: 数据库名称
+      zh_TW: 資料庫名稱
+    type: text
+    default: discourse
+  DISCOURSE_DB_USERNAME:
+    description:
+      en: Database Username
+      zh_CN: 数据库用户名
+      zh_TW: 資料庫使用者名稱
+    type: text
+    default: discourse
+  DISCOURSE_DB_PASSWORD:
+    description:
+      en: Database Password, only applied on first init
+      zh_CN: 数据库密码，仅首次初始化时生效
+      zh_TW: 資料庫密碼，僅首次初始化時生效
+    type: password
+    default: discourse
+  DISCOURSE_UNICORN_WORKERS:
+    description:
+      en: Web worker count, must not be empty
+      zh_CN: Web 工作进程数，不可留空
+      zh_TW: Web 工作行程數，不可留空
+    type: text
+    default: "2"
+  DISCOURSE_UNICORN_SIDEKIQS:
+    description:
+      en: Sidekiq process count, must not be empty
+      zh_CN: Sidekiq 进程数，不可留空
+      zh_TW: Sidekiq 行程數，不可留空
+    type: text
+    default: "1"
+  DISCOURSE_SIDEKIQ_WORKERS:
+    description:
+      en: Threads per Sidekiq process, must not be empty
+      zh_CN: 每个 Sidekiq 进程的并发线程数，不可留空
+      zh_TW: 每個 Sidekiq 行程的並行執行緒數，不可留空
+    type: text
+    default: "5"
+  DISCOURSE_SIDEKIQ_MAX_RSS:
+    description:
+      en: Sidekiq restart memory limit in MB, below 1000 has no effect
+      zh_CN: Sidekiq 内存超限重启阈值 MB，低于 1000 不生效
+      zh_TW: Sidekiq 記憶體超限重啟閾值 MB，低於 1000 不生效
+    type: text
+    default: "1000"
+  DISCOURSE_CDN_URL:
+    description:
+      en: CDN URL for static assets, leave blank to disable
+      zh_CN: 静态资源 CDN 地址，留空则不启用
+      zh_TW: 靜態資源 CDN 地址，留空則不啟用
+    type: url
+    default: ""
+  DISCOURSE_MAXMIND_ACCOUNT_ID:
+    description:
+      en: MaxMind account ID for IP geolocation, leave blank to disable
+      zh_CN: MaxMind 账号 ID，用于 IP 归属地查询，留空则不启用
+      zh_TW: MaxMind 帳號 ID，用於 IP 歸屬地查詢，留空則不啟用
+    type: text
+    default: ""
+  DISCOURSE_MAXMIND_LICENSE_KEY:
+    description:
+      en: MaxMind license key, leave blank to disable
+      zh_CN: MaxMind 许可密钥，留空则不启用
+      zh_TW: MaxMind 授權金鑰，留空則不啟用
+    type: password
+    default: ""
+  DISCOURSE_TIME_ZONE:
+    description:
+      en: Time Zone
+      zh_CN: 时区
+      zh_TW: 時區
+    type: text
+    default: "Asia/Shanghai"
