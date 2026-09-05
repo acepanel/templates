@@ -20,7 +20,7 @@ services:
       start_period: 60s
 
   discourse-redis:
-    image: redis:8.10.0-alpine
+    image: redis:8.10.1-alpine
     restart: unless-stopped
     networks:
       - acepanel-network
@@ -35,7 +35,7 @@ services:
       start_period: 10s
 
   discourse:
-    image: discourse/discourse:2026.7.1
+    image: discourse/discourse:2026.7.2
     restart: unless-stopped
     depends_on:
       discourse-postgres:
