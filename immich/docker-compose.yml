@@ -1,6 +1,6 @@
 services:
   immich-server:
-    image: ghcr.io/immich-app/immich-server:v3.2.0
+    image: ghcr.io/immich-app/immich-server:v3.2.1
     restart: unless-stopped
     depends_on:
       immich-postgres:
@@ -30,7 +30,7 @@ services:
       start_period: 60s
 
   immich-machine-learning:
-    image: ghcr.io/immich-app/immich-machine-learning:v3.2.0
+    image: ghcr.io/immich-app/immich-machine-learning:v3.2.1
     restart: unless-stopped
     networks:
       - acepanel-network
