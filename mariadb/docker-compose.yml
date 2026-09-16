@@ -1,6 +1,6 @@
 services:
   mariadb:
-    image: mariadb:12.3.3-ubi
+    image: mariadb:13.0.2-ubi
     restart: unless-stopped
     networks:
       - acepanel-network
