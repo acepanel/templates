@@ -1,6 +1,6 @@
 services:
   cloudreve:
-    image: cloudreve/cloudreve:4.19.0
+    image: cloudreve/cloudreve:4.19.1
     restart: unless-stopped
     depends_on:
       cloudreve-postgresql:
