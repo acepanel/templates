@@ -1,6 +1,6 @@
 services:
   clickhouse:
-    image: clickhouse/clickhouse-server:26.9.1.1629
+    image: clickhouse/clickhouse-server:26.9.2.8
     restart: unless-stopped
     networks:
       - acepanel-network
