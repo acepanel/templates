@@ -1,6 +1,6 @@
 services:
   percona:
-    image: percona:8.4
+    image: percona:9.7
     restart: unless-stopped
     environment:
       - INIT_ROCKSDB=1
