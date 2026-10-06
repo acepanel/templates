@@ -1,6 +1,6 @@
 services:
   stirling-pdf:
-    image: stirlingtools/stirling-pdf:3.0.2
+    image: stirlingtools/stirling-pdf:3.1.0
     restart: unless-stopped
     networks:
       - acepanel-network
