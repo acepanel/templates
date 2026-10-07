@@ -1,6 +1,6 @@
 services:
   gitea:
-    image: gitea/gitea:28.0.0
+    image: gitea/gitea:28.1.0
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
