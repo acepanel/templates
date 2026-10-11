@@ -1,6 +1,6 @@
 services:
   mongodb:
-    image: mongo:8.3.11
+    image: mongo:9.0.2
     restart: unless-stopped
     networks:
       - acepanel-network
