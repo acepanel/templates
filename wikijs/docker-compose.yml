@@ -1,6 +1,6 @@
 services:
   wikijs:
-    image: requarks/wiki:3.2.0
+    image: requarks/wiki:3.3.0
     restart: unless-stopped
     depends_on:
       wikijs-postgres:
