@@ -30,7 +30,7 @@ services:
       start_period: 60s
 
   bookstack-mariadb:
-    image: linuxserver/mariadb:11.8.9
+    image: linuxserver/mariadb:11.8.10
     restart: unless-stopped
     networks:
       - acepanel-network
